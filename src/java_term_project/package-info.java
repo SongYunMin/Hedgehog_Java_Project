@@ -5,4 +5,4 @@
  * @author user
  *
  */
-package JAVA_Term_Project;
+package java_term_project;
