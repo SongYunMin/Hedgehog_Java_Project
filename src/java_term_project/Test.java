@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
@@ -34,6 +35,13 @@ public class Test extends JFrame {
 	 * Create the frame.
 	 */
 	public Test() {
+		
+		Money_Input money = new Money_Input();
+		// 현재 투입 금액
+		int GUI_Money = 0;
+		money.setMoney(GUI_Money);
+	
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 913, 686);
 		contentPane = new JPanel();
@@ -50,6 +58,7 @@ public class Test extends JFrame {
 		contentPane.add(Main_Text);
 		
 		JButton Admin_Menu = new JButton("\uAD00\uB9AC\uC790 \uBA54\uB274");
+		Admin_Menu.setBackground(new Color(188, 143, 143));
 		Admin_Menu.setForeground(new Color(47, 79, 79));
 		Admin_Menu.setFont(new Font("아리따B", Font.BOLD, 14));
 		Admin_Menu.addActionListener(new ActionListener() {
@@ -63,25 +72,44 @@ public class Test extends JFrame {
 		
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(611, 476, 223, 64);
+		panel.setBounds(612, 481, 223, 64);
 		contentPane.add(panel);
 		
+		
+		// 투입금액 알려줄걸?
+		JLabel Money = new JLabel("");
+		Money.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
+		Money.setBounds(197, 437, 198, 75);
+		Money.setText(String.valueOf(GUI_Money));
+		contentPane.add(Money);
+		
+		// 10원짜리 버튼
 		JButton M10_BT = new JButton("10\uC6D0");
+		M10_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M10_BT.setBackground(new Color(211, 211, 211));
 		M10_BT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				money.setMoney(GUI_Money+50);
+			}
+			
+		});
+		panel.add(M10_BT);
+		
+		// 50원짜리 버튼
+		JButton M50_BT = new JButton("50\uC6D0");
+		M50_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M50_BT.setBackground(new Color(211, 211, 211));
+		M50_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		panel.add(M10_BT);
-		
-		JButton M50_BT = new JButton("50\uC6D0");
-		M50_BT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		panel.add(M50_BT);
 		
+		// 100원짜리 버튼
 		JButton M100_BT = new JButton("100\uC6D0");
+		M100_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M100_BT.setBackground(new Color(211, 211, 211));
 		M100_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -89,14 +117,20 @@ public class Test extends JFrame {
 		});
 		panel.add(M100_BT);
 		
+		// 500원짜리 버튼
 		JButton M500_BT = new JButton("500\uC6D0");
+		M500_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M500_BT.setBackground(new Color(211, 211, 211));
 		M500_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		panel.add(M500_BT);
 		
+		// 1000원짜리 버튼
 		JButton M1000_BT = new JButton("1000\uC6D0");
+		M1000_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M1000_BT.setBackground(new Color(211, 211, 211));
 		M1000_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -163,6 +197,13 @@ public class Test extends JFrame {
 		Exit.setBackground(new Color(255, 228, 225));
 		Exit.setBounds(790, 20, 81, 48);
 		contentPane.add(Exit);
+		
+		JLabel Input_Amount = new JLabel("\uD22C\uC785\uAE08\uC561 : ");
+		Input_Amount.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
+		Input_Amount.setBounds(46, 437, 151, 75);
+		contentPane.add(Input_Amount);
+		
+
 		
 		
 		SportDrink.addActionListener(new ActionListener() {

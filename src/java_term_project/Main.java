@@ -3,9 +3,12 @@ package java_term_project;
 import java.awt.EventQueue;
 
 public class Main {
+	
+	
+	public Main() {}			// 생성자
 	public static void main(String[] args) {
 		
-		int money = 0;
+
 		
 		// 상한선 변수
 		int max_value = 5000;
