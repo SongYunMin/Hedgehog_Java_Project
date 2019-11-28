@@ -11,6 +11,7 @@ import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -96,8 +97,18 @@ public class GUI extends JFrame {
 		M10_BT.addActionListener(new ActionListener() {
 			// 10원 버튼을 누르면 현재금액 증가
 			public void actionPerformed(ActionEvent e) {
-				money.setMoney(money.getMoney(), money10.getMoney_10());
-				InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+				if (money10.getCount() != 0) {
+					if (money.getMoney() <= 4990) {
+						money.setMoney(money.getMoney(), money10.getMoney_10());
+						money10.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "10원 화폐가 없습니다.");
+
+				}
 			}
 		});
 		panel.add(M10_BT);
@@ -108,8 +119,17 @@ public class GUI extends JFrame {
 		M50_BT.setBackground(new Color(211, 211, 211));
 		M50_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				money.setMoney(money.getMoney(), money50.getMoney_50());
-				InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+				if (money50.getCount() != 0) {
+					if (money.getMoney() <= 4950) {
+						money.setMoney(money.getMoney(), money50.getMoney_50());
+						money50.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "50원 화폐가 없습니다.");
+				}
 			}
 		});
 		panel.add(M50_BT);
@@ -120,8 +140,17 @@ public class GUI extends JFrame {
 		M100_BT.setBackground(new Color(211, 211, 211));
 		M100_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				money.setMoney(money.getMoney(), money100.getMoney_100());
-				InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+				if (money100.getCount() != 0) {
+					if (money.getMoney() <= 4900) {
+						money.setMoney(money.getMoney(), money100.getMoney_100());
+						money100.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000 원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "100원 화폐가 없습니다.");
+				}
 			}
 		});
 		panel.add(M100_BT);
@@ -132,8 +161,17 @@ public class GUI extends JFrame {
 		M500_BT.setBackground(new Color(211, 211, 211));
 		M500_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				money.setMoney(money.getMoney(), money500.getMoney_500());
-				InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+				if (money500.getCount() != 0) {
+					if (money.getMoney() <= 4500) {
+						money.setMoney(money.getMoney(), money500.getMoney_500());
+						money500.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "500원 화폐가 없습니다.");
+				}
 			}
 		});
 		panel.add(M500_BT);
@@ -144,16 +182,27 @@ public class GUI extends JFrame {
 		M1000_BT.setBackground(new Color(211, 211, 211));
 		M1000_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				money.setMoney(money.getMoney(), money1000.getMoney_1000());
-				InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+				if (money1000.getCount() != 0) {
+					if (money.getMoney() <= 2000) {
+						money.setMoney(money.getMoney(), money1000.getMoney_1000());
+						money1000.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "화폐 입력 최대단위는 3000원 입니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "1000원 화폐가 없습니다.");
+				}
 			}
 		});
 		panel.add(M1000_BT);
 
+		// Water 버튼
 		JButton Water = new JButton("\uBB3C");
 		Water.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("안녕하세요");
+
 				Admin_Menu.isEnabled();
 			}
 		});

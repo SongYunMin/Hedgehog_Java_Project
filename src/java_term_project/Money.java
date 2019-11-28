@@ -3,11 +3,8 @@ package java_term_project;
 // Money Class
 public class Money {
 		protected int count;
-		
-		public Money(int count)
-		{
-			this.count = count;
-		}
+		public Money(int count){this.count = count;}
+		public int getCount() {return count;}
 }
 
 // 10원
@@ -25,17 +22,9 @@ class Money10 extends Money{
 	public void setMoney_10(int money_10, int How) {
 		this.money_10 = money_10 + How;
 	}
-	
-	// 테스트 메소드
-	public void print()
-	{
-		System.out.println(count);
-	}
+
 	// count 하나씩 감소
-	public void delete()
-	{
-		count--;
-	}
+	public void delete(){ count--; }
 }
 
 // 50원
@@ -53,16 +42,9 @@ class Money50 extends Money{
 	public void setMoney_50(int money_50, int How) {
 		this.money_50 = money_50 + How;
 	}
-	
-	public void print()
-	{
-		System.out.println(count);
-	}
+
 	// count 하나씩 감소
-	public void delete()
-	{
-		count--;
-	}
+	public void delete(){ count--; }
 }
 
 // 100원
@@ -80,16 +62,9 @@ class Money100 extends Money{
 	public void setMoney_100(int money_100) {
 		this.money_100 = money_100;
 	}
-	public void print()
-	{
-		System.out.println(count);
-	}
-	
+
 	// count 하나씩 감소
-	public void delete()
-	{
-		count--;
-	}
+	public void delete(){	count--; }
 }
 
 // 500원
@@ -109,10 +84,7 @@ class Money500 extends Money{
 	}
 	
 	// count 하나씩 감소
-	public void delete()
-	{
-		count--;
-	}
+	public void delete(){ count--; }
 }
 
 // 1000원
@@ -130,4 +102,6 @@ class Money1000 extends Money{
 	public void setMoney_1000(int money_1000) {
 		this.money_1000 = money_1000;
 	}
+	
+	public void delete(){ count--; }
 }
