@@ -72,6 +72,7 @@ public class GUI extends JFrame {
 		Admin_Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("버튼이 출력되었습니다.");
+				new Test();
 				Admin_Menu.setText("gkgkgkgk");
 			}
 		});
@@ -202,7 +203,6 @@ public class GUI extends JFrame {
 		Water.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("안녕하세요");
-
 				Admin_Menu.isEnabled();
 			}
 		});

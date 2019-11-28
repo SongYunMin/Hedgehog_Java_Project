@@ -7,6 +7,9 @@ public class Money {
 		public int getCount() {return count;}
 }
 
+
+
+
 // 10원
 class Money10 extends Money{
 	private int money_10;
@@ -26,6 +29,10 @@ class Money10 extends Money{
 	// count 하나씩 감소
 	public void delete(){ count--; }
 }
+
+
+
+
 
 // 50원
 class Money50 extends Money{
