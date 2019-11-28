@@ -1,7 +1,8 @@
 package java_term_project;
 
+// Money Class
 public class Money {
-		private int count;
+		protected int count;
 		
 		public Money(int count)
 		{
@@ -9,42 +10,124 @@ public class Money {
 		}
 }
 
+// 10원
 class Money10 extends Money{
-	public int money_10;
+	private int money_10;
+
 	public Money10(int money_10, int count) {
 		super(count);
 		this.money_10 = money_10;
 	}
+	// Getter Setter
+	public int getMoney_10() {
+		return money_10;
+	}
+	public void setMoney_10(int money_10, int How) {
+		this.money_10 = money_10 + How;
+	}
+	
+	// 테스트 메소드
+	public void print()
+	{
+		System.out.println(count);
+	}
+	// count 하나씩 감소
+	public void delete()
+	{
+		count--;
+	}
 }
 
+// 50원
 class Money50 extends Money{
-	public int money_50;
+	private int money_50;
+
 	public Money50(int money_50, int count) {
 		super(count);
 		this.money_50 = money_50;
 	}
+	// Getter Setter
+	public int getMoney_50() {
+		return money_50;
+	}
+	public void setMoney_50(int money_50, int How) {
+		this.money_50 = money_50 + How;
+	}
+	
+	public void print()
+	{
+		System.out.println(count);
+	}
+	// count 하나씩 감소
+	public void delete()
+	{
+		count--;
+	}
 }
 
+// 100원
 class Money100 extends Money{
-	public int money_100;
+	private int money_100;
+	
 	public Money100(int money_100, int count) {
 		super(count);
 		this.money_100 = money_100;
 	}
+	// Getter Setter
+	public int getMoney_100() {
+		return money_100;
+	}
+	public void setMoney_100(int money_100) {
+		this.money_100 = money_100;
+	}
+	public void print()
+	{
+		System.out.println(count);
+	}
+	
+	// count 하나씩 감소
+	public void delete()
+	{
+		count--;
+	}
 }
 
+// 500원
 class Money500 extends Money{
-	public int money_500;
+	private int money_500;
+
 	public Money500(int money_500, int count) {
 		super(count);
 		this.money_500 = money_500;
 	}
+	// Getter Setter
+	public int getMoney_500() {
+		return money_500;
+	}
+	public void setMoney_500(int money_500) {
+		this.money_500 = money_500;
+	}
+	
+	// count 하나씩 감소
+	public void delete()
+	{
+		count--;
+	}
 }
 
+// 1000원
 class Money1000 extends Money{
-	public int money_1000;
+	private int money_1000;
+
 	public Money1000(int money_1000, int count) {
 		super(count);
+		this.money_1000 = money_1000;
+	}
+	// Getter Setter
+	public int getMoney_1000() {
+		return money_1000;
+	}
+	public void setMoney_1000(int money_1000) {
 		this.money_1000 = money_1000;
 	}
 }
