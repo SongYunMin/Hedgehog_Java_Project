@@ -43,76 +43,76 @@ class Water_class extends Drink {
 	public void setWater(int water) {
 		this.water = water;
 	}
+}
 
 // 커피
 class Coffee_class extends Drink {
-		private int coffee;
+	private int coffee;
 
-		public Coffee_class(int number, int coffee) {
-			super(number);
-			this.coffee = coffee;
-		}
-
-		public int getCoffee() {
-			return coffee;
-		}
-
-		public void setCoffee(int coffee) {
-			this.coffee = coffee;
-		}
+	public Coffee_class(int number, int coffee) {
+		super(number);
+		this.coffee = coffee;
 	}
+
+	public int getCoffee() {
+		return coffee;
+	}
+
+	public void setCoffee(int coffee) {
+		this.coffee = coffee;
+	}
+}
 
 // 이온음료
-	class Ion_Beverage_class extends Drink {
-		private int ion_beverage;
+class Ion_Beverage_class extends Drink {
+	private int ion_beverage;
 
-		public Ion_Beverage_class(int number, int ion_beverage) {
-			super(number);
-			this.ion_beverage = ion_beverage;
-		}
-
-		public int getIon_beverage() {
-			return ion_beverage;
-		}
-
-		public void setIon_beverage(int ion_beverage) {
-			this.ion_beverage = ion_beverage;
-		}
+	public Ion_Beverage_class(int number, int ion_beverage) {
+		super(number);
+		this.ion_beverage = ion_beverage;
 	}
+
+	public int getIon_beverage() {
+		return ion_beverage;
+	}
+
+	public void setIon_beverage(int ion_beverage) {
+		this.ion_beverage = ion_beverage;
+	}
+}
 
 // 고급커피
-	class High_Quality_Coffee_class extends Drink {
-		private int high_quality_coffee;
+class High_Quality_Coffee_class extends Drink {
+	private int high_quality_coffee;
 
-		public High_Quality_Coffee_class(int number, int High_Coffee) {
-			super(number);
-			this.high_quality_coffee = High_Coffee;
-		}
-
-		public int getHigh_quality_coffee() {
-			return high_quality_coffee;
-		}
-
-		public void setHigh_quality_coffee(int high_quality_coffee) {
-			this.high_quality_coffee = high_quality_coffee;
-		}
+	public High_Quality_Coffee_class(int number, int High_Coffee) {
+		super(number);
+		this.high_quality_coffee = High_Coffee;
 	}
 
+	public int getHigh_quality_coffee() {
+		return high_quality_coffee;
+	}
+
+	public void setHigh_quality_coffee(int high_quality_coffee) {
+		this.high_quality_coffee = high_quality_coffee;
+	}
+}
+
 // 탄산음료
-	class Soda_class extends Drink {
-		private int soda;
+class Soda_class extends Drink {
+	private int soda;
 
-		public Soda_class(int number, int soda) {
-			super(number);
-			this.soda = soda;
-		}
+	public Soda_class(int number, int soda) {
+		super(number);
+		this.soda = soda;
+	}
 
-		public int getSoda() {
-			return soda;
-		}
+	public int getSoda() {
+		return soda;
+	}
 
-		public void setSoda(int soda) {
-			this.soda = soda;
-		}
+	public void setSoda(int soda) {
+		this.soda = soda;
 	}
 }

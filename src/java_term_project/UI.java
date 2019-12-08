@@ -2,7 +2,6 @@ package java_term_project;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -22,7 +21,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
-public class GUI extends JFrame {
+public class UI extends JFrame {
 
 	private JPanel Money_text;
 	private JTextField InputMoney;
@@ -32,17 +31,9 @@ public class GUI extends JFrame {
 	private JTextField SportNum;
 	private JTextField SodaNum;
 
-	/**
-	 * Launch the application.
-	 */
-
 	// 원래 Main을 삭제해야 함
 
-	/**
-	 * Create the frame.
-	 */
-	public GUI() {
-
+public UI() {
 		/*
 		 * Class init Area
 		 */
@@ -100,15 +91,6 @@ public class GUI extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBounds(612, 481, 223, 64);
 		Money_text.add(panel);
-
-
-		// 투입금액 확인
-		InputMoney = new JTextField();
-		InputMoney.setFont(new Font("서울남산체 B", Font.PLAIN, 32));
-		InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
-		InputMoney.setBounds(204, 437, 178, 75);
-		Money_text.add(InputMoney);
-		InputMoney.setColumns(10);
 
 
 		// 10원짜리 버튼
@@ -235,7 +217,7 @@ public class GUI extends JFrame {
 					return;
 				}
 				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
-				if (money.getMoney() >= 450) {
+				if (money.getMoney() >= 450  ) {
 					// 재고 한개 Down
 					water.MinusNumber(water.getNumber(), 1);
 					WaterNum.setText("수량 : " + water.getNumber());
@@ -247,15 +229,10 @@ public class GUI extends JFrame {
 				else {
 					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
 
-				if(water.getNumber() == 0) {
-					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다.");
-				}
-				else {
-					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다!");
-					water.setNumber(water.getNumber(),1);
-				}
 			}
-		});
+		}
+			});
+
 		Water.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		Water.setForeground(new Color(0, 0, 0));
 		Water.setBackground(new Color(255, 228, 225));

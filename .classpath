@@ -7,6 +7,5 @@
 	</classpathentry>
 	<classpathentry excluding="java_term_project/GUI.java" kind="src" path="src"/>
 	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
-	<classpathentry kind="lib" path="src/java_term_project/GUI.java"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
