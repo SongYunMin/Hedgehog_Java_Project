@@ -60,6 +60,13 @@ public class GUI extends JFrame {
 		Money100 money100 = new Money100(100, 5);
 		Money500 money500 = new Money500(500, 5);
 		Money1000 money1000 = new Money1000(1000, 5);
+		
+		Water_class water = new Water_class(3,450);
+		Coffee_class coffee = new Coffee_class(3,500);
+		Ion_Beverage_class ion = new Ion_Beverage_class (3,550);
+		High_Quality_Coffee_class high_coffee = new High_Quality_Coffee_class(3,700);
+		Soda_class soda = new Soda_class(3,750);
+		
 
 		// 현재 총액을 알려줄 class
 		Money_Input money = new Money_Input(0);
@@ -98,6 +105,16 @@ public class GUI extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBounds(612, 481, 223, 64);
 		Money_text.add(panel);
+
+
+		// 투입금액 확인
+		InputMoney = new JTextField();
+		InputMoney.setFont(new Font("서울남산체 B", Font.PLAIN, 32));
+		InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+		InputMoney.setBounds(204, 437, 178, 75);
+		Money_text.add(InputMoney);
+		InputMoney.setColumns(10);
+
 
 		// 10원짜리 버튼
 		JButton M10_BT = new JButton("10\uC6D0");
@@ -216,6 +233,7 @@ public class GUI extends JFrame {
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
+
 				// 재고 Check
 				if (water.getNumber() == 0) {
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
@@ -233,6 +251,13 @@ public class GUI extends JFrame {
 				// 잔액 부족
 				else {
 					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+
+				if(water.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다.");
+				}
+				else {
+					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다!");
+					water.setNumber(water.getNumber(),1);
 				}
 			}
 		});
@@ -369,7 +394,7 @@ public class GUI extends JFrame {
 
 		JLabel Input_Amount = new JLabel("\uD22C\uC785\uAE08\uC561 : ");
 		Input_Amount.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
-		Input_Amount.setBounds(46, 437, 151, 75);
+		Input_Amount.setBounds(46, 437, 165, 75);
 		Money_text.add(Input_Amount);
 
 		/*
