@@ -26,6 +26,11 @@ public class GUI extends JFrame {
 
 	private JPanel Money_text;
 	private JTextField InputMoney;
+	private JTextField WaterNum;
+	private JTextField CoffeeNum;
+	private JTextField HighCoffeeNum;
+	private JTextField SportNum;
+	private JTextField SodaNum;
 
 	/**
 	 * Launch the application.
@@ -37,6 +42,17 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
+
+		/*
+		 * Class init Area
+		 */
+
+		// Drink 초기화
+		Water_class water = new Water_class(3, 450);
+		Coffee_class coffee = new Coffee_class(3, 500);
+		Ion_Beverage_class ion = new Ion_Beverage_class(3, 550);
+		High_Quality_Coffee_class high_coffee = new High_Quality_Coffee_class(3, 700);
+		Soda_class soda = new Soda_class(3, 750);
 
 		// Money 초기화
 		Money10 money10 = new Money10(10, 5);
@@ -82,14 +98,6 @@ public class GUI extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBounds(612, 481, 223, 64);
 		Money_text.add(panel);
-
-		// 투입금액 확인
-		InputMoney = new JTextField();
-		InputMoney.setFont(new Font("서울남산체 B", Font.PLAIN, 32));
-		InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
-		InputMoney.setBounds(191, 437, 178, 75);
-		Money_text.add(InputMoney);
-		InputMoney.setColumns(10);
 
 		// 10원짜리 버튼
 		JButton M10_BT = new JButton("10\uC6D0");
@@ -198,12 +206,34 @@ public class GUI extends JFrame {
 		});
 		panel.add(M1000_BT);
 
+		/*
+		 * Button Area 음료의 버튼 클릭시 이벤트 발생하는 공간
+		 * 
+		 */
+
 		// Water 버튼
 		JButton Water = new JButton("\uBB3C");
 		Water.addActionListener(new ActionListener() {
+			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("안녕하세요");
-				Admin_Menu.isEnabled();
+				// 재고 Check
+				if (water.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
+				}
+				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
+				if (money.getMoney() >= 450) {
+					// 재고 한개 Down
+					water.MinusNumber(water.getNumber(), 1);
+					WaterNum.setText("수량 : " + water.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 450));
+					money.MinusMoney(money.getMoney(), 450);
+					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
 			}
 		});
 		Water.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
@@ -212,28 +242,116 @@ public class GUI extends JFrame {
 		Water.setBounds(104, 269, 81, 48);
 		Money_text.add(Water);
 
+		// Coffee 버튼
 		JButton Coffee = new JButton("\uCEE4\uD53C");
+		Coffee.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 재고 Check
+				if(coffee.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
+				}
+				if (money.getMoney() >= 500) {
+					// 재고 한개 Down
+					coffee.MinusNumber(coffee.getNumber(), 1);
+					CoffeeNum.setText("수량 : " + coffee.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 500));
+					money.MinusMoney(money.getMoney(), 500);
+					JOptionPane.showMessageDialog(Money_text, "커피를 구입하였습니다.");
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
+			}
+		});
 		Coffee.setBackground(new Color(255, 245, 238));
 		Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Coffee.setBounds(262, 269, 81, 48);
+		Coffee.setBounds(246, 269, 81, 48);
 		Money_text.add(Coffee);
 
-		JButton High_Coffee = new JButton("\uACE0\uAE09\uCEE4\uD53C");
-		High_Coffee.setBackground(new Color(240, 255, 255));
-		High_Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		High_Coffee.setBounds(410, 269, 97, 48);
-		Money_text.add(High_Coffee);
-
+		// SportDrink 버튼
 		JButton SportDrink = new JButton("\uC774\uC628\uC74C\uB8CC");
+		SportDrink.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 재고 Check
+				if(ion.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
+				}
+				if (money.getMoney() >= 550) {
+					// 재고 한개 Down
+					ion.MinusNumber(ion.getNumber(), 1);
+					SportNum.setText("수량 : " + ion.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 550));
+					money.MinusMoney(money.getMoney(), 550);
+					JOptionPane.showMessageDialog(Money_text, "이온음료를 구입하였습니다.");
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
+			}
+		});
 		SportDrink.setBackground(new Color(250, 235, 215));
 		SportDrink.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		SportDrink.setBounds(571, 269, 97, 48);
+		SportDrink.setBounds(389, 269, 97, 48);
 		Money_text.add(SportDrink);
 
+		// High_Coffee 버튼
+		JButton High_Coffee = new JButton("\uACE0\uAE09\uCEE4\uD53C");
+		High_Coffee.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 재고 Check
+				if(high_coffee.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
+				}
+				if (money.getMoney() >= 700) {
+					// 재고 한개 Down
+					high_coffee.MinusNumber(high_coffee.getNumber(), 1);
+					HighCoffeeNum.setText("수량 : " + high_coffee.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 700));
+					money.MinusMoney(money.getMoney(), 700);
+					JOptionPane.showMessageDialog(Money_text, "고급커피를 구입하였습니다.");
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
+			}
+		});
+		High_Coffee.setBackground(new Color(240, 255, 255));
+		High_Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		High_Coffee.setBounds(549, 269, 97, 48);
+		Money_text.add(High_Coffee);
+
+		// 탄산음료 버튼
 		JButton Soda = new JButton("\uD0C4\uC0B0\uC74C\uB8CC");
+		Soda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 재고 Check
+				if(soda.getNumber() == 0) {
+					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+					return;
+				}
+				if (money.getMoney() >= 750) {
+					// 재고 한개 Down
+					soda.MinusNumber(soda.getNumber(), 1);
+					SodaNum.setText("수량 : " + soda.getNumber());
+					InputMoney.setText(String.valueOf(money.getMoney() - 750));
+					money.MinusMoney(money.getMoney(), 750);
+					JOptionPane.showMessageDialog(Money_text, "탄산음료를 구입하였습니다.");
+				}
+				// 잔액 부족
+				else {
+					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
+			}
+		});
 		Soda.setBackground(new Color(230, 230, 250));
 		Soda.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Soda.setBounds(724, 269, 97, 48);
+		Soda.setBounds(705, 268, 97, 48);
 		Money_text.add(Soda);
 
 		// 종료 버튼
@@ -253,6 +371,58 @@ public class GUI extends JFrame {
 		Input_Amount.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
 		Input_Amount.setBounds(46, 437, 151, 75);
 		Money_text.add(Input_Amount);
+
+		/*
+		 * TextFlied Area
+		 */
+
+		// 투입금액 확인
+		InputMoney = new JTextField();
+		InputMoney.setFont(new Font("서울남산체 B", Font.PLAIN, 32));
+		InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+		InputMoney.setBounds(191, 437, 178, 75);
+		Money_text.add(InputMoney);
+		InputMoney.setColumns(10);
+
+		// 물 재고 수량 확인
+		WaterNum = new JTextField();
+		WaterNum.setText("수량 : " + water.getNumber());
+		WaterNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		WaterNum.setColumns(10);
+		WaterNum.setBounds(104, 328, 81, 21);
+		Money_text.add(WaterNum);
+
+		// 커피 재고 수량 확인
+		CoffeeNum = new JTextField();
+		CoffeeNum.setText("수량 : " + coffee.getNumber());
+		CoffeeNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		CoffeeNum.setColumns(10);
+		CoffeeNum.setBounds(246, 329, 81, 21);
+		Money_text.add(CoffeeNum);
+
+		// 이온음료 재고 수량 확인
+		SportNum = new JTextField();
+		SportNum.setText("수량 : " + ion.getNumber());
+		SportNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		SportNum.setColumns(10);
+		SportNum.setBounds(399, 329, 81, 21);
+		Money_text.add(SportNum);
+
+		// 고급 커피 재고 수량 확인
+		HighCoffeeNum = new JTextField();
+		HighCoffeeNum.setText("수량 : " + high_coffee.getNumber());
+		HighCoffeeNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		HighCoffeeNum.setColumns(10);
+		HighCoffeeNum.setBounds(559, 329, 81, 21);
+		Money_text.add(HighCoffeeNum);
+
+		// 탄산음료 재고 수량 확인
+		SodaNum = new JTextField();
+		SodaNum.setText("수량 : " + soda.getNumber());
+		SodaNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		SodaNum.setColumns(10);
+		SodaNum.setBounds(715, 328, 81, 21);
+		Money_text.add(SodaNum);
 
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

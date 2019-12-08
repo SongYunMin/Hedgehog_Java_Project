@@ -15,4 +15,8 @@ public class Money_Input {
 	public void setMoney(int money, int plus) {
 		Money = money + plus;
 	}
+	
+	public void MinusMoney(int money, int minus) {
+		Money = money - minus;
+	}
 }
