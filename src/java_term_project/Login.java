@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,12 +19,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
-
 	private JPanel Login_Layout;
 	public JTextField ID_textField;
 	public JPasswordField PW_textField;
 	public ID_PassWord ID_PW = new ID_PassWord();
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -64,22 +65,21 @@ public class Login extends JFrame {
 		btnNewButton.setFont(new Font("서울남산체 B", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int count = 0;
+
 				String ID_Data = ID_textField.getText();
 				String PW_Data = PW_textField.getText();
-				// 처음 비밀번호
-				if(count == 0) {
-				JOptionPane.showMessageDialog(Login_Layout, "처음 로그인 하셨습니다. \n입력하신 비밀번호가 초기비밀번호 입니다.");
 				ID_PW.setID(ID_Data);
-				ID_PW.setPW_Start(PW_Data);
-				count++;
-				return;
+				ID_PW.setPW(PW_Data);
+				// ID,  PW 검사
+				if(ID_PW.getID().equals(ID_PW.getID_Start()) == true && ID_PW.getPW().equals(ID_PW.getPW_Start()) == true) {
+				JOptionPane.showMessageDialog(Login_Layout, "로그인 되었습니다.\n관리자 메뉴로 이동합니다.");
+				Manager manager = new Manager();
+				manager.setVisible(true);
+				dispose();
 				}
 				else {
-					ID_PW.setID(ID_Data);
-					ID_PW.setPW(PW_Data);
+					JOptionPane.showMessageDialog(Login_Layout, "아이디 혹은 패스워드가 다릅니다.");
 				}
-				
 
 			}
 		});
