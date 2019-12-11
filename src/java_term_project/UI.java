@@ -1,39 +1,32 @@
 package java_term_project;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JScrollPane;
-import javax.swing.JToolBar;
-import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
+import java.awt.event.ActionListener;
 
 public class UI extends JFrame {
 
 	private JPanel Money_text;
-	private JTextField InputMoney;
-	private JTextField WaterNum;
-	private JTextField CoffeeNum;
-	private JTextField HighCoffeeNum;
-	private JTextField SportNum;
-	private JTextField SodaNum;
+	public static JTextField InputMoney;
+	public static JTextField WaterNum;
+	public static JTextField CoffeeNum;
+	public static JTextField HighCoffeeNum;
+	public static JTextField SportNum;
+	public static JTextField SodaNum;
+	
+	public static Money_Input money = new Money_Input(0);
+	// Drink 초기화
+	public static Water_class water = new Water_class(3,450);
+	public static Coffee_class coffee = new Coffee_class(3,500);
+	public static Ion_Beverage_class ion = new Ion_Beverage_class (3,550);
+	public static High_Quality_Coffee_class high_coffee = new High_Quality_Coffee_class(3,700);
+	public static Soda_class soda = new Soda_class(3,750);
 
 	// 원래 Main을 삭제해야 함
 
-public UI() {
+	public UI() {
 		/*
 		 * Class init Area
 		 */
@@ -44,18 +37,9 @@ public UI() {
 		Money100 money100 = new Money100(100, 5);
 		Money500 money500 = new Money500(500, 5);
 		Money1000 money1000 = new Money1000(1000, 5);
-		
-		
-		// Drink 초기화
-		Water_class water = new Water_class(3,450);
-		Coffee_class coffee = new Coffee_class(3,500);
-		Ion_Beverage_class ion = new Ion_Beverage_class (3,550);
-		High_Quality_Coffee_class high_coffee = new High_Quality_Coffee_class(3,700);
-		Soda_class soda = new Soda_class(3,750);
-		
 
 		// 현재 총액을 알려줄 class
-		Money_Input money = new Money_Input(0);
+
 		money.setMoney(0, 0);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,8 +64,11 @@ public UI() {
 		Admin_Menu.setFont(new Font("아리따B", Font.BOLD, 14));
 		Admin_Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Manager ma = new Manager();
+				Login Lg = new Login();
+				Lg.setVisible(true);
+				/*Manager ma = new Manager();
 				ma.setVisible(true);
+				*/
 			}
 		});
 		Admin_Menu.setBounds(27, 20, 117, 48);
@@ -201,7 +188,7 @@ public UI() {
 
 		/*
 		 * Button Area 음료의 버튼 클릭시 이벤트 발생하는 공간
-		 * 
+		 *
 		 */
 
 		// Water 버튼
@@ -227,9 +214,9 @@ public UI() {
 				// 잔액 부족
 				else {
 					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+				}
 			}
-		}
-	});
+		});
 
 		Water.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		Water.setForeground(new Color(0, 0, 0));
@@ -261,7 +248,7 @@ public UI() {
 				}
 			}
 		});
-		
+
 		Coffee.setBackground(new Color(255, 245, 238));
 		Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		Coffee.setBounds(246, 269, 81, 48);
