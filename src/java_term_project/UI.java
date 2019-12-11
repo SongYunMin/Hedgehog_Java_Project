@@ -80,9 +80,8 @@ public UI() {
 		Admin_Menu.setFont(new Font("아리따B", Font.BOLD, 14));
 		Admin_Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("버튼이 출력되었습니다.");
-				new Test();
-				Admin_Menu.setText("gkgkgkgk");
+				Manager ma = new Manager();
+				ma.setVisible(true);
 			}
 		});
 		Admin_Menu.setBounds(27, 20, 117, 48);
@@ -210,9 +209,9 @@ public UI() {
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
-
 				// 재고 Check
 				if (water.getNumber() == 0) {
+					WaterNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
@@ -228,10 +227,9 @@ public UI() {
 				// 잔액 부족
 				else {
 					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
-
 			}
 		}
-			});
+	});
 
 		Water.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		Water.setForeground(new Color(0, 0, 0));
@@ -245,6 +243,7 @@ public UI() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
 				if(coffee.getNumber() == 0) {
+					CoffeeNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
@@ -262,6 +261,7 @@ public UI() {
 				}
 			}
 		});
+		
 		Coffee.setBackground(new Color(255, 245, 238));
 		Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		Coffee.setBounds(246, 269, 81, 48);
@@ -273,6 +273,7 @@ public UI() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
 				if(ion.getNumber() == 0) {
+					SportNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
@@ -301,6 +302,7 @@ public UI() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
 				if(high_coffee.getNumber() == 0) {
+					HighCoffeeNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
@@ -329,6 +331,7 @@ public UI() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
 				if(soda.getNumber() == 0) {
+					SodaNum.setText("품절");
 					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
 					return;
 				}
@@ -383,6 +386,7 @@ public UI() {
 
 		// 물 재고 수량 확인
 		WaterNum = new JTextField();
+		WaterNum.setText("품절");
 		WaterNum.setText("수량 : " + water.getNumber());
 		WaterNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
 		WaterNum.setColumns(10);
