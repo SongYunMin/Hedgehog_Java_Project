@@ -552,7 +552,6 @@ public class UI extends JFrame {
 		JButton ReturnButton = new JButton("\uBC18\uD658");
 		ReturnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				while (money.getMoney() != 0) {
 					//1000원 갯수
 					if (money.getMoney() >= 1000) {
@@ -627,14 +626,6 @@ public class UI extends JFrame {
 		label_5.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
 		label_5.setBounds(699, 386, 132, 48);
 		Money_text.add(label_5);
-		
-
-		
-
-		
-
-		
-
 
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
