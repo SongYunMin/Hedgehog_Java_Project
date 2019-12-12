@@ -2,9 +2,9 @@ package java_term_project;
 
 public class ID_PassWord {
 	private String ID;
-	private String ID_Start = "manager";
-	private String PW;
-	private String PW_Start = "manager@1234";
+	private String ID_Start;
+	static private String PW;
+	static private String PW_Start;
 	
 	public String getID() {
 		return ID;

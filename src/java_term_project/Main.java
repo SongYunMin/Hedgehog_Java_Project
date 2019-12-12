@@ -2,9 +2,14 @@ package java_term_project;
 import java.awt.EventQueue;
 
 public class Main {
-	public Main() {}			// 持失切
+	static public ID_PassWord ID_PW = new ID_PassWord();
+	public Main() {
+
+	}			// 持失切
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			
 			public void run() {
 				try {
 					UI frame = new UI();

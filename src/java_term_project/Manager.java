@@ -54,7 +54,8 @@ public class Manager extends JFrame {
 		Admin_Label.setBounds(24, 10, 172, 86);
 		Manager_Layout.add(Admin_Label);
 
-		// 음료들의 재고를 보충!
+		// 음료들의 재고를 보충
+		// 물 보충
 		JButton Plus_Water = new JButton("\uBB3C \uBCF4\uCDA9");
 		Plus_Water.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,6 +68,7 @@ public class Manager extends JFrame {
 		Plus_Water.setBounds(413, 116, 124, 47);
 		Manager_Layout.add(Plus_Water);
 
+		// 커피 보충
 		JButton Plus_Coffee = new JButton("\uCEE4\uD53C \uBCF4\uCDA9");
 		Plus_Coffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,6 +81,8 @@ public class Manager extends JFrame {
 		Plus_Coffee.setBounds(413, 183, 124, 47);
 		Manager_Layout.add(Plus_Coffee);
 
+		
+		// 이온 음료 보충
 		JButton Plus_Sport = new JButton("\uC774\uC628\uC74C\uB8CC \uBCF4\uCDA9");
 		Plus_Sport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -91,6 +95,7 @@ public class Manager extends JFrame {
 		Plus_Sport.setBounds(413, 251, 124, 47);
 		Manager_Layout.add(Plus_Sport);
 
+		// 고급커피 보충
 		JButton Plus_HighCoffee = new JButton("\uACE0\uAE09\uCEE4\uD53C \uBCF4\uCDA9");
 		Plus_HighCoffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,6 +108,8 @@ public class Manager extends JFrame {
 		Plus_HighCoffee.setBounds(413, 320, 124, 47);
 		Manager_Layout.add(Plus_HighCoffee);
 
+		
+		// 탄산 음료 보충
 		JButton Plus_Soda = new JButton("\uD0C4\uC0B0\uC74C\uB8CC \uBCF4\uCDA9");
 		Plus_Soda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -114,5 +121,29 @@ public class Manager extends JFrame {
 		Plus_Soda.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
 		Plus_Soda.setBounds(413, 393, 124, 47);
 		Manager_Layout.add(Plus_Soda);
+		
+		
+		// 비밀번호 변경 이벤트
+		JButton Change_PassWord = new JButton("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
+		Change_PassWord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Change_PW change_pw = new Change_PW();
+				change_pw.setVisible(true);
+			}
+		});
+		Change_PassWord.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Change_PassWord.setBounds(430, 591, 124, 47);
+		Manager_Layout.add(Change_PassWord);
+		
+		// 나가기 버튼
+		JButton Exit_Button = new JButton("\uB098\uAC00\uAE30");
+		Exit_Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		Exit_Button.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
+		Exit_Button.setBounds(413, 32, 124, 47);
+		Manager_Layout.add(Exit_Button);
 	}
 }
