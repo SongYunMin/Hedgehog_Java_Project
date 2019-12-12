@@ -1,6 +1,7 @@
 package java_term_project;
 
 import javax.swing.*;
+
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -86,11 +87,10 @@ public class UI extends JFrame {
 
 		/*
 		 * Button Area 음료의 버튼 클릭시 이벤트 발생하는 공간
-		 *
 		 */
 
 		// Water 버튼
-		JButton Water = .new JButton("\uBB3C");
+		JButton Water = new JButton("\uBB3C");
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
@@ -239,6 +239,10 @@ public class UI extends JFrame {
 		Soda.setBounds(705, 268, 97, 48);
 		Money_text.add(Soda);
 
+		/*
+		 * // 종료 버튼
+		 */
+
 		// 종료 버튼
 		JButton Exit = new JButton("\uC885\uB8CC");
 		Exit.addActionListener(new ActionListener() {
@@ -252,14 +256,15 @@ public class UI extends JFrame {
 		Exit.setBounds(790, 20, 81, 48);
 		Money_text.add(Exit);
 
+		/*
+		 * 투입금액 확인 TextField
+		 */
+
+		// 투입금액 확인 Label
 		JLabel Input_Amount = new JLabel("\uD22C\uC785\uAE08\uC561 : ");
 		Input_Amount.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
 		Input_Amount.setBounds(46, 437, 165, 75);
 		Money_text.add(Input_Amount);
-
-		/*
-		 * TextFlied Area
-		 */
 
 		// 투입금액 확인
 		InputMoney = new JTextField();
@@ -268,6 +273,10 @@ public class UI extends JFrame {
 		InputMoney.setBounds(191, 437, 178, 75);
 		Money_text.add(InputMoney);
 		InputMoney.setColumns(10);
+
+		/*
+		 * 재고수량 확인 TextField
+		 */
 
 		// 물 재고 수량 확인
 		WaterNum = new JTextField();
@@ -310,149 +319,25 @@ public class UI extends JFrame {
 		SodaNum.setBounds(715, 328, 81, 21);
 		Money_text.add(SodaNum);
 
+		/*
+		 * Money 입력 버튼
+		 */
+
 		// 10원짜리 버튼
 		JButton M10_BT = new JButton("10\uC6D0");
-		M10_BT.setBounds(456, 511, 67, 21);
+		M10_BT.setBounds(644, 414, 67, 21);
 		Money_text.add(M10_BT);
 		M10_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
 		M10_BT.setBackground(new Color(211, 211, 211));
-
-		// 50원짜리 버튼
-		JButton M50_BT = new JButton("50\uC6D0");
-		M50_BT.setBounds(535, 511, 67, 21);
-		Money_text.add(M50_BT);
-		M50_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
-		M50_BT.setBackground(new Color(211, 211, 211));
-
-		// 100원짜리 버튼
-		JButton M100_BT = new JButton("100\uC6D0");
-		M100_BT.setBounds(614, 511, 67, 21);
-		Money_text.add(M100_BT);
-		M100_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
-		M100_BT.setBackground(new Color(211, 211, 211));
-
-		// 500원짜리 버튼
-		JButton M500_BT = new JButton("500\uC6D0");
-		M500_BT.setBounds(693, 511, 67, 21);
-		Money_text.add(M500_BT);
-		M500_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
-		M500_BT.setBackground(new Color(211, 211, 211));
-
-		// 1000원짜리 버튼
-		JButton M1000_BT = new JButton("1000\uC6D0");
-		M1000_BT.setBounds(772, 511, 70, 21);
-		Money_text.add(M1000_BT);
-		M1000_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
-		M1000_BT.setBackground(new Color(211, 211, 211));
-
-		Money10_Num = new JTextField();
-		Money10_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money10_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Money10_Num.setColumns(10);
-		Money10_Num.setBounds(456, 542, 67, 21);
-		Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
-		Money_text.add(Money10_Num);
-
-		Money50_Num = new JTextField();
-		Money50_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money50_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Money50_Num.setColumns(10);
-		Money50_Num.setBounds(535, 542, 67, 21);
-		Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
-		Money_text.add(Money50_Num);
-
-		Money100_Num = new JTextField();
-		Money100_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money100_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Money100_Num.setColumns(10);
-		Money100_Num.setBounds(614, 542, 67, 21);
-		Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
-		Money_text.add(Money100_Num);
-
-		Money500_Num = new JTextField();
-		Money500_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money500_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Money500_Num.setColumns(10);
-		Money500_Num.setBounds(693, 542, 67, 21);
-		Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
-		Money_text.add(Money500_Num);
-
-		Money1000_Num = new JTextField();
-		Money1000_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money1000_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Money1000_Num.setColumns(10);
-		Money1000_Num.setBounds(772, 543, 70, 21);
-		Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
-		Money_text.add(Money1000_Num);
-		
-		M1000_BT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (money1000.getCount() != 0) {
-					if (money.getMoney() <= 2000) {
-						money.setMoney(money.getMoney(), money1000.getMoney_1000());
-						money1000.delete();
-						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-					} else {
-						JOptionPane.showMessageDialog(Money_text, "화폐 입력 최대단위는 3000원 입니다.");
-					}
-				} else {
-					JOptionPane.showMessageDialog(Money_text, "1000원 화폐가 없습니다.");
-				}
-			}
-		});
-		M500_BT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (money500.getCount() != 0) {
-					if (money.getMoney() <= 4500) {
-						money.setMoney(money.getMoney(), money500.getMoney_500());
-						money500.delete();
-						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-					} else {
-						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
-					}
-				} else {
-					JOptionPane.showMessageDialog(Money_text, "500원 화폐가 없습니다.");
-				}
-			}
-		});
-		M100_BT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (money100.getCount() != 0) {
-					if (money.getMoney() <= 4900) {
-						money.setMoney(money.getMoney(), money100.getMoney_100());
-						money100.delete();
-						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-					} else {
-						JOptionPane.showMessageDialog(Money_text, "5000 원 이상 입력 받을 수 없습니다.");
-					}
-				} else {
-					JOptionPane.showMessageDialog(Money_text, "100원 화폐가 없습니다.");
-				}
-			}
-		});
-		M50_BT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (money50.getCount() != 0) {
-					if (money.getMoney() <= 4950) {
-						money.setMoney(money.getMoney(), money50.getMoney_50());
-						money50.delete();
-						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
-					} else {
-						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
-					}
-				} else {
-					JOptionPane.showMessageDialog(Money_text, "50원 화폐가 없습니다.");
-				}
-			}
-		});
 		M10_BT.addActionListener(new ActionListener() {
 			// 10원 버튼을 누르면 현재금액 증가
 			public void actionPerformed(ActionEvent e) {
 				if (money10.getCount() != 0) {
 					if (money.getMoney() <= 4990) {
 						money.setMoney(money.getMoney(), money10.getMoney_10());
-						money10.delete();
+					//	money10.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+						//Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
 					} else {
 
 					}
@@ -462,6 +347,225 @@ public class UI extends JFrame {
 				}
 			}
 		});
+
+		// 50원짜리 버튼
+		JButton M50_BT = new JButton("50\uC6D0");
+		M50_BT.setBounds(723, 414, 67, 21);
+		Money_text.add(M50_BT);
+		M50_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M50_BT.setBackground(new Color(211, 211, 211));
+		M50_BT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (money50.getCount() != 0) {
+					if (money.getMoney() <= 4950) {
+						money.setMoney(money.getMoney(), money50.getMoney_50());
+				//		money50.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+						//Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "50원 화폐가 없습니다.");
+				}
+			}
+		});
+
+		// 100원짜리 버튼
+		JButton M100_BT = new JButton("100\uC6D0");
+		M100_BT.setBounds(602, 445, 67, 21);
+		Money_text.add(M100_BT);
+		M100_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M100_BT.setBackground(new Color(211, 211, 211));
+		M100_BT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (money100.getCount() != 0) {
+					if (money.getMoney() <= 4900) {
+						money.setMoney(money.getMoney(), money100.getMoney_100());
+				//		money100.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						//Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000 원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "100원 화폐가 없습니다.");
+				}
+			}
+		});
+
+		// 500원짜리 버튼
+		JButton M500_BT = new JButton("500\uC6D0");
+		M500_BT.setBounds(681, 445, 67, 21);
+		Money_text.add(M500_BT);
+		M500_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M500_BT.setBackground(new Color(211, 211, 211));
+		M500_BT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (money500.getCount() != 0) {
+					if (money.getMoney() <= 4500) {
+						money.setMoney(money.getMoney(), money500.getMoney_500());
+
+				//		money500.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						//Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "500원 화폐가 없습니다.");
+				}
+			}
+		});
+
+		// 1000원짜리 버튼
+		JButton M1000_BT = new JButton("1000\uC6D0");
+		M1000_BT.setBounds(760, 445, 70, 21);
+		Money_text.add(M1000_BT);
+		M1000_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M1000_BT.setBackground(new Color(211, 211, 211));
+		M1000_BT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (money1000.getCount() != 0) {
+
+					if (money.getMoney() <= 2000) {
+						money.setMoney(money.getMoney(), money1000.getMoney_1000());
+				//		money1000.delete();
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						//Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
+					} else {
+						JOptionPane.showMessageDialog(Money_text, "화폐 입력 최대단위는 3000원 입니다.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(Money_text, "1000원 화폐가 없습니다.");
+				}
+			}
+		});
+
+		/*
+		 * // 잔돈의 갯수 표시되는 TextField
+		 */
+
+		// 10원
+		Money10_Num = new JTextField();
+		Money10_Num.setHorizontalAlignment(SwingConstants.CENTER);
+		Money10_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money10_Num.setColumns(10);
+		Money10_Num.setBounds(485, 585, 67, 21);
+		Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
+		Money_text.add(Money10_Num);
+
+		// 50원
+		Money50_Num = new JTextField();
+		Money50_Num.setHorizontalAlignment(SwingConstants.CENTER);
+		Money50_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money50_Num.setColumns(10);
+		Money50_Num.setBounds(564, 585, 67, 21);
+		Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
+		Money_text.add(Money50_Num);
+
+		// 100원
+		Money100_Num = new JTextField();
+		Money100_Num.setHorizontalAlignment(SwingConstants.CENTER);
+		Money100_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money100_Num.setColumns(10);
+		Money100_Num.setBounds(643, 585, 67, 21);
+		Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
+		Money_text.add(Money100_Num);
+
+		// 500원
+		Money500_Num = new JTextField();
+		Money500_Num.setHorizontalAlignment(SwingConstants.CENTER);
+		Money500_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money500_Num.setColumns(10);
+		Money500_Num.setBounds(722, 585, 67, 21);
+		Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
+		Money_text.add(Money500_Num);
+
+		// 1000원
+		Money1000_Num = new JTextField();
+		Money1000_Num.setHorizontalAlignment(SwingConstants.CENTER);
+		Money1000_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money1000_Num.setColumns(10);
+		Money1000_Num.setBounds(801, 586, 70, 21);
+		Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
+		Money_text.add(Money1000_Num);
+
+		/*
+		 * 반환 버튼
+		 */
+
+		JButton ReturnButton = new JButton("\uBC18\uD658");
+		ReturnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				while (money.getMoney() != 0) {
+					//1000원 갯수
+					if (money.getMoney() >= 1000) {
+						money.MinusMoney(money.getMoney(), 1000);
+						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
+						money1000.PlusCount(money1000.getCount(), 1);
+						Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
+					} 
+					// 500원 갯수
+					else if (money.getMoney() >= 500) {
+						money.MinusMoney(money.getMoney(), 500);
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						money500.PlusCount(money500.getCount(), 1);
+						Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
+					} 
+					// 100원 갯수
+					else if (money.getMoney() >= 100) {
+						money.MinusMoney(money.getMoney(), 100);
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						money100.PlusCount(money100.getCount(), 1);
+						Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
+					} 
+					// 50원 갯수
+					else if (money.getMoney() >= 50) {
+						money.MinusMoney(money.getMoney(), 50);
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						money50.PlusCount(money50.getCount(), 1);
+						Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
+					} 
+					// 10원 갯수
+					else if (money.getMoney() >= 10) {
+						money.MinusMoney(money.getMoney(), 10);
+						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
+						money10.PlusCount(money10.getCount(), 1);
+						Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
+					}
+				}
+			}
+		});
+		ReturnButton.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		ReturnButton.setBackground(new Color(250, 235, 215));
+		ReturnButton.setBounds(230, 522, 97, 48);
+		Money_text.add(ReturnButton);
+
+		JLabel label = new JLabel("10\uC6D0");
+		label.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label.setBounds(495, 538, 50, 40);
+		Money_text.add(label);
+
+		JLabel label_1 = new JLabel("50\uC6D0");
+		label_1.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_1.setBounds(574, 538, 50, 40);
+		Money_text.add(label_1);
+
+		JLabel label_2 = new JLabel("100\uC6D0");
+		label_2.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_2.setBounds(644, 538, 63, 40);
+		Money_text.add(label_2);
+
+		JLabel label_3 = new JLabel("500\uC6D0");
+		label_3.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_3.setBounds(726, 540, 63, 40);
+		Money_text.add(label_3);
+
+		JLabel label_4 = new JLabel("1000\uC6D0");
+		label_4.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_4.setBounds(801, 540, 70, 40);
+		Money_text.add(label_4);
 
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
