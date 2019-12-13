@@ -36,41 +36,4 @@ public class Gross_Sales {
 	public void Plus_Month_Sales(int month_Sales,int plus) {
 		this.Day_Sales = month_Sales + plus;
 	}
-	
-	/*
-	// π∞ ∏≈√‚
-	public int getWater_Sales() {
-		return Water_Sales;
-	}
-
-	public void setWater_Sales(int water_Sales) {
-		Water_Sales = water_Sales;
-	}
-
-	public int getCoffee_Sales() {
-		return Coffee_Sales;
-	}
-
-	public void setCoffee_Sales(int coffee_Sales) {
-		Coffee_Sales = coffee_Sales;
-	}
-
-	public int getSport_Sales() {
-		return Sport_Sales;
-	}
-
-	public void setSport_Sales(int sport_Sales) {
-		Sport_Sales = sport_Sales;
-	}
-
-	public int getSoda_Sales() {
-		return Soda_Sales;
-	}
-
-	public void setSoda_Sales(int soda_Sales) {
-		Soda_Sales = soda_Sales;
-	}
-	*/
-
-
 }

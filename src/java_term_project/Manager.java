@@ -1,6 +1,7 @@
 package java_term_project;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -134,6 +135,19 @@ public class Manager extends JFrame {
 		Change_PassWord.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
 		Change_PassWord.setBounds(430, 591, 124, 47);
 		Manager_Layout.add(Change_PassWord);
+		
+		// 음료 변경 버튼
+		JButton Change_Drink = new JButton("\uC74C\uB8CC\uBCC0\uACBD");
+		Change_Drink.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Drink_Change D_C = new Drink_Change();
+				D_C.setVisible(true);
+			}
+		});
+		Change_Drink.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Change_Drink.setBackground(new Color(250, 235, 215));
+		Change_Drink.setBounds(286, 35, 97, 48);
+		Manager_Layout.add(Change_Drink);
 		
 		// 나가기 버튼
 		JButton Exit_Button = new JButton("\uB098\uAC00\uAE30");

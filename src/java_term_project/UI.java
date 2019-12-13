@@ -16,6 +16,11 @@ public class UI extends JFrame {
 	public static JTextField HighCoffeeNum;
 	public static JTextField SportNum;
 	public static JTextField SodaNum;
+	public static JButton Water;
+	public static JButton Coffee;
+	public static JButton SportDrink;
+	public static JButton High_Coffee;
+	public static JButton Soda;
 	public static int count = 0;
 
 	public static Money_Input money = new Money_Input(0);
@@ -144,7 +149,7 @@ public class UI extends JFrame {
 		 */
 
 		// Water 버튼
-		JButton Water = new JButton("\uBB3C");
+		Water = new JButton("물");
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
@@ -177,7 +182,7 @@ public class UI extends JFrame {
 		Money_text.add(Water);
 
 		// Coffee 버튼
-		JButton Coffee = new JButton("\uCEE4\uD53C");
+		Coffee = new JButton("\uCEE4\uD53C");
 		Coffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
@@ -207,7 +212,7 @@ public class UI extends JFrame {
 		Money_text.add(Coffee);
 
 		// SportDrink 버튼
-		JButton SportDrink = new JButton("\uC774\uC628\uC74C\uB8CC");
+		SportDrink = new JButton("\uC774\uC628\uC74C\uB8CC");
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
@@ -236,7 +241,7 @@ public class UI extends JFrame {
 		Money_text.add(SportDrink);
 
 		// High_Coffee 버튼
-		JButton High_Coffee = new JButton("\uACE0\uAE09\uCEE4\uD53C");
+		High_Coffee = new JButton("\uACE0\uAE09\uCEE4\uD53C");
 		High_Coffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
@@ -265,7 +270,7 @@ public class UI extends JFrame {
 		Money_text.add(High_Coffee);
 
 		// 탄산음료 버튼
-		JButton Soda = new JButton("\uD0C4\uC0B0\uC74C\uB8CC");
+		Soda = new JButton("\uD0C4\uC0B0\uC74C\uB8CC");
 		Soda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 재고 Check
@@ -626,6 +631,8 @@ public class UI extends JFrame {
 		label_5.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
 		label_5.setBounds(699, 386, 132, 48);
 		Money_text.add(label_5);
+		
+
 
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

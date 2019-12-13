@@ -22,6 +22,7 @@ public class Change_PW extends JFrame {
 	private JPanel Change_PW_Layout;
 	private JTextField PW_curr;
 	private JTextField PW_change;
+	public static String PW_Change;
 
 	/**
 	 * Create the frame.
@@ -56,11 +57,13 @@ public class Change_PW extends JFrame {
 		
 		
 		// 변경할 비밀번호
+
 		PW_change = new JTextField();
 		PW_change.setForeground(Color.GRAY);
 		PW_change.setFont(new Font("서울남산체 L", Font.PLAIN, 12));
 		PW_change.setColumns(10);
 		PW_change.setBounds(223, 72, 139, 41);
+		PW_Change = PW_change.getText();
 		Change_PW_Layout.add(PW_change);
 		
 		JLabel label_1 = new JLabel("\uC870\uAC74 : 8\uC790\uB9AC\uC774\uC0C1, \uD2B9\uC218\uBB38\uC790 1\uAC1C\uC774\uC0C1, \uC22B\uC790 1\uAC1C\uC774\uC0C1");
