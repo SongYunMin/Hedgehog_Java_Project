@@ -21,6 +21,8 @@ public class UI extends JFrame {
 	public static JButton SportDrink;
 	public static JButton High_Coffee;
 	public static JButton Soda;
+	public static Gross_Sales GS = new Gross_Sales();
+	public static Gross_UI Gross = new Gross_UI();
 	public static int count = 0;
 
 	public static Money_Input money = new Money_Input(0);
@@ -167,6 +169,7 @@ public class UI extends JFrame {
 					InputMoney.setText(String.valueOf(money.getMoney() - 450));
 					money.MinusMoney(money.getMoney(), 450);
 					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
 				}
 				// 잔액 부족
 				else {
@@ -198,6 +201,7 @@ public class UI extends JFrame {
 					InputMoney.setText(String.valueOf(money.getMoney() - 500));
 					money.MinusMoney(money.getMoney(), 500);
 					JOptionPane.showMessageDialog(Money_text, "커피를 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), coffee.getCoffee());
 				}
 				// 잔액 부족
 				else {
@@ -228,6 +232,7 @@ public class UI extends JFrame {
 					InputMoney.setText(String.valueOf(money.getMoney() - 550));
 					money.MinusMoney(money.getMoney(), 550);
 					JOptionPane.showMessageDialog(Money_text, "이온음료를 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), ion.getIon_beverage());
 				}
 				// 잔액 부족
 				else {
@@ -257,6 +262,7 @@ public class UI extends JFrame {
 					InputMoney.setText(String.valueOf(money.getMoney() - 700));
 					money.MinusMoney(money.getMoney(), 700);
 					JOptionPane.showMessageDialog(Money_text, "고급커피를 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), high_coffee.getHigh_quality_coffee());
 				}
 				// 잔액 부족
 				else {
@@ -286,6 +292,7 @@ public class UI extends JFrame {
 					InputMoney.setText(String.valueOf(money.getMoney() - 750));
 					money.MinusMoney(money.getMoney(), 750);
 					JOptionPane.showMessageDialog(Money_text, "탄산음료를 구입하였습니다.");
+					GS.Plus_Day_Sales(GS.getDay_Sales(), soda.getSoda());
 				}
 				// 잔액 부족
 				else {
@@ -600,6 +607,7 @@ public class UI extends JFrame {
 		ReturnButton.setBackground(new Color(250, 235, 215));
 		ReturnButton.setBounds(196, 512, 97, 48);
 		Money_text.add(ReturnButton);
+		
 
 		JLabel label = new JLabel("10\uC6D0");
 		label.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));

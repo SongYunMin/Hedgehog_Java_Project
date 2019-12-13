@@ -1,17 +1,13 @@
 package java_term_project;
 
 public class Gross_Sales {
-	private int Day_Sales;		
+	private  int Day_Sales;		
 	private int Month_Sales;
-	private int Water_Sales;
-	private int Coffee_Sales;
-	private int Sport_Sales;
-	private int Soda_Sales;
 	
 	// 생성자
 	public Gross_Sales() {
-		
-		
+		Day_Sales = 0;
+		Month_Sales = 0;
 	};		
 	
 	// 일 매출

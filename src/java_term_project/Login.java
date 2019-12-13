@@ -87,12 +87,22 @@ public class Login extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(157, 200, 97, 34);
+		btnNewButton.setBounds(159, 217, 97, 34);
 		Login_Layout.add(btnNewButton);
 		
 		JLabel Login_Label = new JLabel("\uAD00\uB9AC\uC790\uBA54\uB274 \uB85C\uADF8\uC778");
 		Login_Label.setFont(new Font("서울남산체 EB", Font.PLAIN, 28));
 		Login_Label.setBounds(106, 10, 220, 34);
 		Login_Layout.add(Login_Label);
+		
+		JLabel lblId = new JLabel("\uCD08\uAE30 ID : manager");
+		lblId.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
+		lblId.setBounds(64, 173, 133, 48);
+		Login_Layout.add(lblId);
+		
+		JLabel lblPw = new JLabel("\uCD08\uAE30 PW : manager@1234");
+		lblPw.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
+		lblPw.setBounds(190, 173, 185, 48);
+		Login_Layout.add(lblPw);
 	}
 }

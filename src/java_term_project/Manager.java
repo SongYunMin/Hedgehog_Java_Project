@@ -30,24 +30,27 @@ public class Manager extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 590, 697);
 		Manager_Layout = new JPanel();
+		Manager_Layout.setBackground(new Color(250, 235, 215));
 		Manager_Layout.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(Manager_Layout);
 		Manager_Layout.setLayout(null);
 
 		// 일/월/음료별 매출관리
 		JButton Drink_Sales = new JButton("\uC74C\uB8CC\uBCC4 \uB9E4\uCD9C \uAD00\uB9AC");
+		Drink_Sales.setBackground(new Color(255, 255, 224));
 		Drink_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Drink_Sales.setBounds(393, 518, 161, 63);
+		Drink_Sales.setBounds(222, 518, 161, 63);
 		Manager_Layout.add(Drink_Sales);
 
-		JButton monthly_Sales = new JButton("\uC6D4\uBCC4 \uCD1D \uB9E4\uCD9C \uD655\uC778");
-		monthly_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		monthly_Sales.setBounds(209, 518, 161, 63);
-		Manager_Layout.add(monthly_Sales);
-
-		JButton Daily_Sales = new JButton("\uC77C\uBCC4 \uCD1D \uB9E4\uCD9C \uD655\uC778");
+		JButton Daily_Sales = new JButton("\uCD1D \uB9E4\uCD9C \uD655\uC778");
+		Daily_Sales.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UI.Gross.setVisible(true);
+			}
+		});
+		Daily_Sales.setBackground(new Color(255, 250, 240));
 		Daily_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Daily_Sales.setBounds(24, 518, 161, 63);
+		Daily_Sales.setBounds(35, 518, 161, 63);
 		Manager_Layout.add(Daily_Sales);
 
 		JLabel Admin_Label = new JLabel("\uAD00\uB9AC\uC790 \uBA54\uB274");
@@ -58,6 +61,7 @@ public class Manager extends JFrame {
 		// 음료들의 재고를 보충
 		// 물 보충
 		JButton Plus_Water = new JButton("\uBB3C \uBCF4\uCDA9");
+		Plus_Water.setBackground(new Color(135, 206, 250));
 		Plus_Water.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UI.water.setNumber(3);
@@ -71,6 +75,7 @@ public class Manager extends JFrame {
 
 		// 커피 보충
 		JButton Plus_Coffee = new JButton("\uCEE4\uD53C \uBCF4\uCDA9");
+		Plus_Coffee.setBackground(new Color(0, 206, 209));
 		Plus_Coffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UI.coffee.setNumber(3);
@@ -85,6 +90,7 @@ public class Manager extends JFrame {
 		
 		// 이온 음료 보충
 		JButton Plus_Sport = new JButton("\uC774\uC628\uC74C\uB8CC \uBCF4\uCDA9");
+		Plus_Sport.setBackground(new Color(216, 191, 216));
 		Plus_Sport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UI.ion.setNumber(3);
@@ -98,6 +104,7 @@ public class Manager extends JFrame {
 
 		// 고급커피 보충
 		JButton Plus_HighCoffee = new JButton("\uACE0\uAE09\uCEE4\uD53C \uBCF4\uCDA9");
+		Plus_HighCoffee.setBackground(new Color(255, 255, 224));
 		Plus_HighCoffee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UI.high_coffee.setNumber(3);
@@ -112,6 +119,7 @@ public class Manager extends JFrame {
 		
 		// 탄산 음료 보충
 		JButton Plus_Soda = new JButton("\uD0C4\uC0B0\uC74C\uB8CC \uBCF4\uCDA9");
+		Plus_Soda.setBackground(new Color(255, 215, 0));
 		Plus_Soda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UI.soda.setNumber(3);
@@ -126,6 +134,7 @@ public class Manager extends JFrame {
 		
 		// 비밀번호 변경 이벤트
 		JButton Change_PassWord = new JButton("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
+		Change_PassWord.setBackground(new Color(240, 248, 255));
 		Change_PassWord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Change_PW change_pw = new Change_PW();
@@ -133,7 +142,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Change_PassWord.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Change_PassWord.setBounds(430, 591, 124, 47);
+		Change_PassWord.setBounds(413, 518, 124, 63);
 		Manager_Layout.add(Change_PassWord);
 		
 		// 음료 변경 버튼
@@ -145,12 +154,13 @@ public class Manager extends JFrame {
 			}
 		});
 		Change_Drink.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
-		Change_Drink.setBackground(new Color(250, 235, 215));
-		Change_Drink.setBounds(286, 35, 97, 48);
+		Change_Drink.setBackground(new Color(173, 216, 230));
+		Change_Drink.setBounds(413, 457, 124, 48);
 		Manager_Layout.add(Change_Drink);
 		
 		// 나가기 버튼
 		JButton Exit_Button = new JButton("\uB098\uAC00\uAE30");
+		Exit_Button.setBackground(new Color(230, 230, 250));
 		Exit_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
