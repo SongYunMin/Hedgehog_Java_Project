@@ -23,9 +23,12 @@ public class Drink_Change extends JFrame {
 	private JTextField Drink_text;
 	private JTextField Change_Text;
 
-	/**
-	 * Create the frame.
-	 */
+
+/*
+ * 		음료 변경 UI
+ * 
+ */
+	
 	public Drink_Change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -56,6 +59,7 @@ public class Drink_Change extends JFrame {
 		Change_Text.setBounds(243, 136, 121, 42);
 		Drink_change.add(Change_Text);
 		
+		// 버튼 클릭시 이벤트 실행
 		JButton Change_Button = new JButton("\uC74C\uB8CC \uBCC0\uACBD");
 		Change_Button.setBackground(new Color(255, 245, 238));
 		Change_Button.setFont(new Font("서울남산체 B", Font.PLAIN, 14));
@@ -87,7 +91,7 @@ public class Drink_Change extends JFrame {
 				}
 			}
 		});
-		Change_Button.setBounds(161, 201, 97, 23);
+		Change_Button.setBounds(113, 198, 97, 36);
 		Drink_change.add(Change_Button);
 		
 		JLabel label_1 = new JLabel("\uC74C\uB8CC \uBCC0\uACBD");
@@ -95,5 +99,16 @@ public class Drink_Change extends JFrame {
 		label_1.setFont(new Font("서울남산체 EB", Font.PLAIN, 27));
 		label_1.setBounds(144, 16, 121, 44);
 		Drink_change.add(label_1);
+		
+		JButton Exit = new JButton("\uC885\uB8CC");
+		Exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		Exit.setFont(new Font("서울남산체 B", Font.PLAIN, 14));
+		Exit.setBackground(new Color(255, 245, 238));
+		Exit.setBounds(222, 198, 97, 36);
+		Drink_change.add(Exit);
 	}
 }

@@ -24,15 +24,11 @@ public class Login extends JFrame {
 	public JPasswordField PW_textField;
 
 	
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
+	/*
+	 * 	관리자 메뉴에 로그인 하는 ui CLASS
+	 * 
 	 */
 	public Login() {
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		Login_Layout = new JPanel();
@@ -62,7 +58,9 @@ public class Login extends JFrame {
 		PW_textField.setBounds(180, 129, 139, 41);
 		Login_Layout.add(PW_textField);
 		
+		// 버튼 클릭시 이벤트 구현
 		JButton btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.setBackground(new Color(255, 235, 205));
 		btnNewButton.setFont(new Font("서울남산체 B", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -71,11 +69,11 @@ public class Login extends JFrame {
 				// 텍스트 필드에서 입력한 비밀번호 읽어옴
 				ID_Data = ID_textField.getText();
 				PW_Data = PW_textField.getText();
-				// 
 				Main.ID_PW.setID(ID_Data);
 				Main.ID_PW.setPW(PW_Data);
 				// ID,  PW 검사
-				if(Main.ID_PW.getID().equals(Main.ID_PW.getID_Start()) == true && Main.ID_PW.getPW().equals(Main.ID_PW.getPW_Start()) == true) {
+				if(Main.ID_PW.getID().equals(Main.ID_PW.getID_Start()) == true && 
+						Main.ID_PW.getPW().equals(Main.ID_PW.getPW_Start()) == true) {
 				JOptionPane.showMessageDialog(Login_Layout, "로그인 되었습니다.\n관리자 메뉴로 이동합니다.");
 				Manager manager = new Manager();
 				manager.setVisible(true);
@@ -87,7 +85,7 @@ public class Login extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(159, 217, 97, 34);
+		btnNewButton.setBounds(113, 217, 97, 34);
 		Login_Layout.add(btnNewButton);
 		
 		JLabel Login_Label = new JLabel("\uAD00\uB9AC\uC790\uBA54\uB274 \uB85C\uADF8\uC778");
@@ -104,5 +102,16 @@ public class Login extends JFrame {
 		lblPw.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
 		lblPw.setBounds(190, 173, 185, 48);
 		Login_Layout.add(lblPw);
+		
+		JButton Exit = new JButton("\uC885\uB8CC");
+		Exit.setBackground(new Color(255, 245, 238));
+		Exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		Exit.setFont(new Font("서울남산체 B", Font.PLAIN, 16));
+		Exit.setBounds(222, 217, 97, 34);
+		Login_Layout.add(Exit);
 	}
 }

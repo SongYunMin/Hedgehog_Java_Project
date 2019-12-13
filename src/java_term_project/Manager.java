@@ -28,7 +28,7 @@ public class Manager extends JFrame {
 	 */
 	public Manager() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 590, 697);
+		setBounds(100, 100, 590, 465);
 		Manager_Layout = new JPanel();
 		Manager_Layout.setBackground(new Color(250, 235, 215));
 		Manager_Layout.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -39,7 +39,7 @@ public class Manager extends JFrame {
 		JButton Drink_Sales = new JButton("\uC74C\uB8CC\uBCC4 \uB9E4\uCD9C \uAD00\uB9AC");
 		Drink_Sales.setBackground(new Color(255, 255, 224));
 		Drink_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Drink_Sales.setBounds(222, 518, 161, 63);
+		Drink_Sales.setBounds(222, 318, 161, 63);
 		Manager_Layout.add(Drink_Sales);
 
 		JButton Daily_Sales = new JButton("\uCD1D \uB9E4\uCD9C \uD655\uC778");
@@ -50,7 +50,7 @@ public class Manager extends JFrame {
 		});
 		Daily_Sales.setBackground(new Color(255, 250, 240));
 		Daily_Sales.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Daily_Sales.setBounds(35, 518, 161, 63);
+		Daily_Sales.setBounds(35, 318, 161, 63);
 		Manager_Layout.add(Daily_Sales);
 
 		JLabel Admin_Label = new JLabel("\uAD00\uB9AC\uC790 \uBA54\uB274");
@@ -70,7 +70,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Plus_Water.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Plus_Water.setBounds(413, 116, 124, 47);
+		Plus_Water.setBounds(87, 159, 124, 47);
 		Manager_Layout.add(Plus_Water);
 
 		// 커피 보충
@@ -84,7 +84,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Plus_Coffee.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Plus_Coffee.setBounds(413, 183, 124, 47);
+		Plus_Coffee.setBounds(223, 159, 124, 47);
 		Manager_Layout.add(Plus_Coffee);
 
 		
@@ -99,7 +99,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Plus_Sport.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Plus_Sport.setBounds(413, 251, 124, 47);
+		Plus_Sport.setBounds(359, 159, 124, 47);
 		Manager_Layout.add(Plus_Sport);
 
 		// 고급커피 보충
@@ -113,7 +113,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Plus_HighCoffee.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Plus_HighCoffee.setBounds(413, 320, 124, 47);
+		Plus_HighCoffee.setBounds(154, 225, 124, 47);
 		Manager_Layout.add(Plus_HighCoffee);
 
 		
@@ -128,7 +128,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Plus_Soda.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Plus_Soda.setBounds(413, 393, 124, 47);
+		Plus_Soda.setBounds(297, 225, 124, 47);
 		Manager_Layout.add(Plus_Soda);
 		
 		
@@ -142,7 +142,7 @@ public class Manager extends JFrame {
 			}
 		});
 		Change_PassWord.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Change_PassWord.setBounds(413, 518, 124, 63);
+		Change_PassWord.setBounds(413, 318, 124, 63);
 		Manager_Layout.add(Change_PassWord);
 		
 		// 음료 변경 버튼
@@ -153,21 +153,21 @@ public class Manager extends JFrame {
 				D_C.setVisible(true);
 			}
 		});
-		Change_Drink.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Change_Drink.setFont(new Font("서울남산체 EB", Font.PLAIN, 15));
 		Change_Drink.setBackground(new Color(173, 216, 230));
-		Change_Drink.setBounds(413, 457, 124, 48);
+		Change_Drink.setBounds(277, 35, 124, 48);
 		Manager_Layout.add(Change_Drink);
 		
 		// 나가기 버튼
 		JButton Exit_Button = new JButton("\uB098\uAC00\uAE30");
-		Exit_Button.setBackground(new Color(230, 230, 250));
+		Exit_Button.setBackground(new Color(173, 216, 230));
 		Exit_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
 		Exit_Button.setFont(new Font("서울남산체 EB", Font.PLAIN, 16));
-		Exit_Button.setBounds(413, 32, 124, 47);
+		Exit_Button.setBounds(413, 36, 124, 48);
 		Manager_Layout.add(Exit_Button);
 	}
 }

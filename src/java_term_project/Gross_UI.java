@@ -19,6 +19,10 @@ public class Gross_UI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	/*
+	 * 	 총 매출 현황 UI
+	 */
 	public Gross_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 512, 326);

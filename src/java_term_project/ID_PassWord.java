@@ -1,5 +1,9 @@
 package java_term_project;
 
+/*
+ * 	ID와 패스워드의 정보가 저장되어 있는 class
+ */
+
 public class ID_PassWord {
 	private String ID;
 	private String ID_Start;

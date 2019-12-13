@@ -27,6 +27,11 @@ public class Change_PW extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	/*
+	 * 	비밀번호 변경 UI
+	 */
+	
 	public Change_PW() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -75,6 +80,7 @@ public class Change_PW extends JFrame {
 		
 		// 비밀번호 변경 버튼 클릭시  이벤트
 		JButton Button_PWChange = new JButton("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
+		Button_PWChange.setBackground(new Color(250, 240, 230));
 		Button_PWChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String PW_change = new String();
@@ -92,7 +98,18 @@ public class Change_PW extends JFrame {
 			}
 		});
 		Button_PWChange.setFont(new Font("서울남산체 EB", Font.PLAIN, 14));
-		Button_PWChange.setBounds(159, 152, 116, 43);
+		Button_PWChange.setBounds(95, 151, 116, 43);
 		Change_PW_Layout.add(Button_PWChange);
+		
+		JButton Exit = new JButton("\uC885\uB8CC");
+		Exit.setBackground(new Color(240, 248, 255));
+		Exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		Exit.setFont(new Font("서울남산체 EB", Font.PLAIN, 14));
+		Exit.setBounds(223, 151, 116, 43);
+		Change_PW_Layout.add(Exit);
 	}
 }

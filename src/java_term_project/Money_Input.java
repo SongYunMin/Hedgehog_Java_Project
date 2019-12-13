@@ -1,5 +1,10 @@
 package java_term_project;
 
+
+/*
+ *		Money의 입출력을 위한 Class 
+ */
+
 public class Money_Input {
 	private int Money;
 	private int Total_Money;
