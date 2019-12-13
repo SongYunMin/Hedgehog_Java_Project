@@ -24,7 +24,6 @@ public class UI extends JFrame {
 	public static Gross_Sales GS = new Gross_Sales();
 	public static Gross_UI Gross = new Gross_UI();
 	public static int count = 0;
-
 	public static Money_Input money = new Money_Input(0);
 	// Drink 초기화
 	public static Water_class water = new Water_class(3, 450);
@@ -56,14 +55,8 @@ public class UI extends JFrame {
 		Money500 money500 = new Money500(500, 5);
 		Money1000 money1000 = new Money1000(1000, 5);
 
-
-
-
-		
 		// 현재 총액을 알려줄 class
-
 		money.setMoney(0, 0);
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 913, 686);
 		Money_text = new JPanel();
@@ -80,17 +73,15 @@ public class UI extends JFrame {
 		Main_Text.setBounds(12, 18, 304, 57);
 		Money_text.add(Main_Text);
 		
-
 		/*
 		 * 	음료들의 Image
 		 */
+		
 		ImageIcon water_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\water.png");
 		ImageIcon coffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\coffee.jpg");
 		ImageIcon sport_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\sportdrink.png");
 		ImageIcon highcoffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\highcoffee.png");
 		ImageIcon soda_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\soda.jpg");
-		
-		
 		
 		JLabel Water_Label = new JLabel(water_image);
 		Water_Label.setForeground(Color.BLACK);

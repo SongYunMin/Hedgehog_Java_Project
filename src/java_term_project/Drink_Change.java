@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class Drink_Change extends JFrame {
 
@@ -34,27 +36,29 @@ public class Drink_Change extends JFrame {
 		
 		JLabel Drink_name = new JLabel("\uBCC0\uACBD\uB420 \uC74C\uB8CC \uC774\uB984 : ");
 		Drink_name.setFont(new Font("서울남산체 B", Font.PLAIN, 21));
-		Drink_name.setBounds(53, 60, 164, 44);
+		Drink_name.setBounds(67, 70, 164, 44);
 		Drink_change.add(Drink_name);
 		
 		JLabel label = new JLabel("\uBCC0\uACBD\uD560 \uC74C\uB8CC \uC774\uB984 : ");
 		label.setFont(new Font("서울남산체 B", Font.PLAIN, 21));
-		label.setBounds(53, 124, 164, 44);
+		label.setBounds(67, 134, 164, 44);
 		Drink_change.add(label);
 		
 		// 변경될 텍스트
 		Drink_text = new JTextField();
-		Drink_text.setBounds(229, 60, 121, 42);
+		Drink_text.setBounds(243, 70, 121, 42);
 		Drink_change.add(Drink_text);
 		Drink_text.setColumns(10);
 		
 		// 변경할 텍스트
 		Change_Text = new JTextField();
 		Change_Text.setColumns(10);
-		Change_Text.setBounds(229, 126, 121, 42);
+		Change_Text.setBounds(243, 136, 121, 42);
 		Drink_change.add(Change_Text);
 		
 		JButton Change_Button = new JButton("\uC74C\uB8CC \uBCC0\uACBD");
+		Change_Button.setBackground(new Color(255, 245, 238));
+		Change_Button.setFont(new Font("서울남산체 B", Font.PLAIN, 14));
 		Change_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(Drink_text.getText().equals("물") == true) {
@@ -85,5 +89,11 @@ public class Drink_Change extends JFrame {
 		});
 		Change_Button.setBounds(161, 201, 97, 23);
 		Drink_change.add(Change_Button);
+		
+		JLabel label_1 = new JLabel("\uC74C\uB8CC \uBCC0\uACBD");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("서울남산체 EB", Font.PLAIN, 27));
+		label_1.setBounds(144, 16, 121, 44);
+		Drink_change.add(label_1);
 	}
 }
