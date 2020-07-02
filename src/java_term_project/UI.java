@@ -68,7 +68,7 @@ public class UI extends JFrame {
 		JLabel Main_Text = new JLabel("\uC74C\uB8CC \uC790\uD310\uAE30");
 		Main_Text.setHorizontalAlignment(SwingConstants.CENTER);
 		Main_Text.setForeground(new Color(0, 0, 0));
-		Main_Text.setFont(new Font("순천향체", Font.PLAIN, 47));
+		Main_Text.setFont(new Font("배달의민족 주아", Font.PLAIN, 47));
 		Main_Text.setBackground(new Color(0, 0, 0));
 		Main_Text.setBounds(12, 18, 304, 57);
 		Money_text.add(Main_Text);
@@ -124,7 +124,7 @@ public class UI extends JFrame {
 		JButton Admin_Menu = new JButton("\uAD00\uB9AC\uC790 \uBA54\uB274");
 		Admin_Menu.setBackground(new Color(135, 206, 250));
 		Admin_Menu.setForeground(new Color(47, 79, 79));
-		Admin_Menu.setFont(new Font("서울남산체 B", Font.PLAIN, 14));
+		Admin_Menu.setFont(new Font("배달의민족 주아", Font.PLAIN, 14));
 		Admin_Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login Lg = new Login();
@@ -169,7 +169,7 @@ public class UI extends JFrame {
 			}
 		});
 
-		Water.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Water.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Water.setForeground(new Color(0, 0, 0));
 		Water.setBackground(new Color(255, 228, 225));
 		Water.setBounds(105, 288, 81, 48);
@@ -308,7 +308,7 @@ public class UI extends JFrame {
 			}
 		});
 		Exit.setForeground(Color.BLACK);
-		Exit.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Exit.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Exit.setBackground(new Color(255, 228, 225));
 		Exit.setBounds(790, 20, 81, 48);
 		Money_text.add(Exit);
@@ -339,7 +339,7 @@ public class UI extends JFrame {
 		WaterNum = new JTextField();
 		WaterNum.setText("품절");
 		WaterNum.setText("수량 : " + water.getNumber());
-		WaterNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		WaterNum.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		WaterNum.setColumns(10);
 		WaterNum.setBounds(105, 347, 81, 21);
 		Money_text.add(WaterNum);
