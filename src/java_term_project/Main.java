@@ -1,13 +1,22 @@
 package java_term_project;
+
 import java.awt.EventQueue;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 
 public class Main {
 	static public ID_PassWord ID_PW = new ID_PassWord();
-	public Main() {
 
-	}			// 持失切
-	
-	public static void main(String[] args) {
+	public Main() {
+	} // 持失切
+
+	public static void main(String[] args) throws IOException{
 		EventQueue.invokeLater(new Runnable() {
 			
 			public void run() {
@@ -19,5 +28,7 @@ public class Main {
 				}
 			}
 		});
+		DataTransfer q = new DataTransfer();
+		q.Transfer("data");
 	}
 }
