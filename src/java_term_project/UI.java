@@ -60,7 +60,7 @@ public class UI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 913, 686);
 		Money_text = new JPanel();
-		Money_text.setBackground(new Color(248, 248, 255));
+		Money_text.setBackground(new Color(204, 204, 255));
 		Money_text.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(Money_text);
 		Money_text.setLayout(null);
@@ -77,7 +77,7 @@ public class UI extends JFrame {
 		 * 	음료들의 Image
 		 */
 		
-		ImageIcon water_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\water.png");
+		ImageIcon water_image = new ImageIcon("\\src\\java_term_project\\image\\water.png");
 		ImageIcon coffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\coffee.jpg");
 		ImageIcon sport_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\sportdrink.png");
 		ImageIcon highcoffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\highcoffee.png");
@@ -202,7 +202,7 @@ public class UI extends JFrame {
 		});
 
 		Coffee.setBackground(new Color(255, 245, 238));
-		Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Coffee.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Coffee.setBounds(247, 288, 81, 48);
 		Money_text.add(Coffee);
 
@@ -232,7 +232,7 @@ public class UI extends JFrame {
 			}
 		});
 		SportDrink.setBackground(new Color(250, 235, 215));
-		SportDrink.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		SportDrink.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		SportDrink.setBounds(390, 288, 97, 48);
 		Money_text.add(SportDrink);
 
@@ -262,7 +262,7 @@ public class UI extends JFrame {
 			}
 		});
 		High_Coffee.setBackground(new Color(240, 255, 255));
-		High_Coffee.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		High_Coffee.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		High_Coffee.setBounds(550, 288, 97, 48);
 		Money_text.add(High_Coffee);
 
@@ -292,7 +292,7 @@ public class UI extends JFrame {
 			}
 		});
 		Soda.setBackground(new Color(230, 230, 250));
-		Soda.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Soda.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Soda.setBounds(706, 287, 97, 48);
 		Money_text.add(Soda);
 
@@ -319,13 +319,13 @@ public class UI extends JFrame {
 
 		// 투입금액 확인 Label
 		JLabel Input_Amount = new JLabel("\uD22C\uC785\uAE08\uC561 : ");
-		Input_Amount.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
+		Input_Amount.setFont(new Font("배달의민족 주아", Font.PLAIN, 32));
 		Input_Amount.setBounds(12, 427, 165, 75);
 		Money_text.add(Input_Amount);
 
 		// 투입금액 확인
 		InputMoney = new JTextField();
-		InputMoney.setFont(new Font("서울남산체 B", Font.PLAIN, 32));
+		InputMoney.setFont(new Font("배달의민족 주아", Font.PLAIN, 32));
 		InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
 		InputMoney.setBounds(157, 427, 178, 75);
 		Money_text.add(InputMoney);
@@ -347,7 +347,7 @@ public class UI extends JFrame {
 		// 커피 재고 수량 확인
 		CoffeeNum = new JTextField();
 		CoffeeNum.setText("수량 : " + coffee.getNumber());
-		CoffeeNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		CoffeeNum.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		CoffeeNum.setColumns(10);
 		CoffeeNum.setBounds(247, 348, 81, 21);
 		Money_text.add(CoffeeNum);
@@ -355,7 +355,7 @@ public class UI extends JFrame {
 		// 이온음료 재고 수량 확인
 		SportNum = new JTextField();
 		SportNum.setText("수량 : " + ion.getNumber());
-		SportNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		SportNum.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		SportNum.setColumns(10);
 		SportNum.setBounds(400, 348, 81, 21);
 		Money_text.add(SportNum);
@@ -363,7 +363,7 @@ public class UI extends JFrame {
 		// 고급 커피 재고 수량 확인
 		HighCoffeeNum = new JTextField();
 		HighCoffeeNum.setText("수량 : " + high_coffee.getNumber());
-		HighCoffeeNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		HighCoffeeNum.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		HighCoffeeNum.setColumns(10);
 		HighCoffeeNum.setBounds(560, 348, 81, 21);
 		Money_text.add(HighCoffeeNum);
@@ -371,7 +371,7 @@ public class UI extends JFrame {
 		// 탄산음료 재고 수량 확인
 		SodaNum = new JTextField();
 		SodaNum.setText("수량 : " + soda.getNumber());
-		SodaNum.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		SodaNum.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		SodaNum.setColumns(10);
 		SodaNum.setBounds(716, 347, 81, 21);
 		Money_text.add(SodaNum);
@@ -384,7 +384,7 @@ public class UI extends JFrame {
 		JButton M10_BT = new JButton("10\uC6D0");
 		M10_BT.setBounds(699, 434, 67, 21);
 		Money_text.add(M10_BT);
-		M10_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M10_BT.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		M10_BT.setBackground(new Color(211, 211, 211));
 		M10_BT.addActionListener(new ActionListener() {
 			// 10원 버튼을 누르면 현재금액 증가
@@ -409,7 +409,7 @@ public class UI extends JFrame {
 		JButton M50_BT = new JButton("50\uC6D0");
 		M50_BT.setBounds(778, 434, 67, 21);
 		Money_text.add(M50_BT);
-		M50_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M50_BT.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		M50_BT.setBackground(new Color(211, 211, 211));
 		M50_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -432,7 +432,7 @@ public class UI extends JFrame {
 		JButton M100_BT = new JButton("100\uC6D0");
 		M100_BT.setBounds(657, 465, 67, 21);
 		Money_text.add(M100_BT);
-		M100_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M100_BT.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		M100_BT.setBackground(new Color(211, 211, 211));
 		M100_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -455,7 +455,7 @@ public class UI extends JFrame {
 		JButton M500_BT = new JButton("500\uC6D0");
 		M500_BT.setBounds(736, 465, 67, 21);
 		Money_text.add(M500_BT);
-		M500_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M500_BT.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		M500_BT.setBackground(new Color(211, 211, 211));
 		M500_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -479,7 +479,7 @@ public class UI extends JFrame {
 		JButton M1000_BT = new JButton("1000\uC6D0");
 		M1000_BT.setBounds(815, 465, 70, 21);
 		Money_text.add(M1000_BT);
-		M1000_BT.setFont(new Font("서울남산체 B", Font.PLAIN, 12));
+		M1000_BT.setFont(new Font("배달의민족 주아", Font.PLAIN, 12));
 		M1000_BT.setBackground(new Color(211, 211, 211));
 		M1000_BT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -506,7 +506,7 @@ public class UI extends JFrame {
 		// 10원
 		Money10_Num = new JTextField();
 		Money10_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money10_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money10_Num.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Money10_Num.setColumns(10);
 		Money10_Num.setBounds(485, 585, 67, 21);
 		Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
@@ -515,7 +515,7 @@ public class UI extends JFrame {
 		// 50원
 		Money50_Num = new JTextField();
 		Money50_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money50_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money50_Num.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Money50_Num.setColumns(10);
 		Money50_Num.setBounds(564, 585, 67, 21);
 		Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
@@ -524,7 +524,7 @@ public class UI extends JFrame {
 		// 100원
 		Money100_Num = new JTextField();
 		Money100_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money100_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money100_Num.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Money100_Num.setColumns(10);
 		Money100_Num.setBounds(643, 585, 67, 21);
 		Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
@@ -533,7 +533,7 @@ public class UI extends JFrame {
 		// 500원
 		Money500_Num = new JTextField();
 		Money500_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money500_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money500_Num.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Money500_Num.setColumns(10);
 		Money500_Num.setBounds(722, 585, 67, 21);
 		Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
@@ -542,7 +542,7 @@ public class UI extends JFrame {
 		// 1000원
 		Money1000_Num = new JTextField();
 		Money1000_Num.setHorizontalAlignment(SwingConstants.CENTER);
-		Money1000_Num.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		Money1000_Num.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		Money1000_Num.setColumns(10);
 		Money1000_Num.setBounds(801, 586, 70, 21);
 		Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
@@ -594,40 +594,40 @@ public class UI extends JFrame {
 				}
 			}
 		});
-		ReturnButton.setFont(new Font("서울남산체 B", Font.PLAIN, 15));
+		ReturnButton.setFont(new Font("배달의민족 주아", Font.PLAIN, 15));
 		ReturnButton.setBackground(new Color(250, 235, 215));
 		ReturnButton.setBounds(196, 512, 97, 48);
 		Money_text.add(ReturnButton);
 		
 
 		JLabel label = new JLabel("10\uC6D0");
-		label.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
 		label.setBounds(495, 538, 50, 40);
 		Money_text.add(label);
 
 		JLabel label_1 = new JLabel("50\uC6D0");
-		label_1.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_1.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
 		label_1.setBounds(574, 538, 50, 40);
 		Money_text.add(label_1);
 
 		JLabel label_2 = new JLabel("100\uC6D0");
-		label_2.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_2.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
 		label_2.setBounds(644, 538, 63, 40);
 		Money_text.add(label_2);
 
 		JLabel label_3 = new JLabel("500\uC6D0");
-		label_3.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
+		label_3.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
 		label_3.setBounds(726, 540, 63, 40);
 		Money_text.add(label_3);
 
 		JLabel label_4 = new JLabel("1000\uC6D0");
-		label_4.setFont(new Font("서울남산체 EB", Font.PLAIN, 23));
-		label_4.setBounds(801, 540, 70, 40);
+		label_4.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
+		label_4.setBounds(801, 538, 84, 40);
 		Money_text.add(label_4);
 		
 		JLabel label_5 = new JLabel("\uAE08\uC561 \uC785\uB825");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setFont(new Font("서울남산체 EB", Font.PLAIN, 32));
+		label_5.setFont(new Font("배달의민족 주아", Font.PLAIN, 32));
 		label_5.setBounds(699, 386, 132, 48);
 		Money_text.add(label_5);
 		
