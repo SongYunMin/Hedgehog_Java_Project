@@ -1,11 +1,11 @@
 package java_term_project;
 
 import javax.swing.*;
-
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class UI extends JFrame {
 
@@ -36,6 +36,7 @@ public class UI extends JFrame {
 	private JTextField Money100_Num;
 	private JTextField Money500_Num;
 	private JTextField Money1000_Num;
+	public static DataTransfer a = new DataTransfer();
 
 	// 원래 Main을 삭제해야 함
 
@@ -161,6 +162,13 @@ public class UI extends JFrame {
 					money.MinusMoney(money.getMoney(), 450);
 					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
 					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
+					// 데아터에 연결하기 위해선 IO예외처리 필수인듯
+					try {
+						a.Transfer(String.valueOf(water.getWaterPrice()));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 				// 잔액 부족
 				else {

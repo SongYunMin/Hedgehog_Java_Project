@@ -11,8 +11,8 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 public class Main {
-	static public ID_PassWord ID_PW = new ID_PassWord();
-
+	public static ID_PassWord ID_PW = new ID_PassWord();
+	public static DataTransfer a = new DataTransfer();
 	public Main() {
 	} // »ý¼ºÀÚ
 
@@ -28,7 +28,6 @@ public class Main {
 				}
 			}
 		});
-		DataTransfer q = new DataTransfer();
-		q.Transfer("data");
+		a.Transfer("data");
 	}
 }

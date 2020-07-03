@@ -30,10 +30,12 @@ public class Drink {
 // ¹°
 class Water_class extends Drink {
 	private int water;
-
+	private int number;
+	
 	public Water_class(int number, int water) {
 		super(number);
 		this.water = water;
+		this.number = number;
 	}
 
 	public int getWater() {
@@ -42,6 +44,9 @@ class Water_class extends Drink {
 
 	public void setWater(int water) {
 		this.water = water;
+	}
+	public int getWaterPrice() {
+		return number;
 	}
 }
 
