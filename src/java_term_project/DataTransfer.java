@@ -14,6 +14,7 @@ public class DataTransfer {
 	DataTransfer(){}
 	
 	public void Transfer(String data) throws IOException {
+		int status = 0;
 		try(Socket client = new Socket()){
 			InetSocketAddress ipep = new InetSocketAddress("127.0.0.1", 9999);
 			// 접속
@@ -43,7 +44,7 @@ public class DataTransfer {
 						e.printStackTrace();
 					}
 				});
-				// 콘솔로 메시지 받기
+				 //콘솔로 메시지 받기
 				try(Scanner sc = new Scanner(System.in)){
 					while (true) {
 						// 메시지 받음
@@ -65,5 +66,10 @@ public class DataTransfer {
 		}catch(Throwable e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void sendData(String data) {
+		
+		
 	}
 }

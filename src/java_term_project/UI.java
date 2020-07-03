@@ -1,11 +1,22 @@
 package java_term_project;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.Socket;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class UI extends JFrame {
 
@@ -36,7 +47,9 @@ public class UI extends JFrame {
 	private JTextField Money100_Num;
 	private JTextField Money500_Num;
 	private JTextField Money1000_Num;
-	public static DataTransfer a = new DataTransfer();
+	public static Socket socket = null;
+	// 소켓 정의되어 있음
+	// public static DataTransfer a = new DataTransfer();
 
 	// 원래 Main을 삭제해야 함
 
@@ -73,38 +86,42 @@ public class UI extends JFrame {
 		Main_Text.setBackground(new Color(0, 0, 0));
 		Main_Text.setBounds(12, 18, 304, 57);
 		Money_text.add(Main_Text);
-		
+
 		/*
-		 * 	음료들의 Image
+		 * 음료들의 Image
 		 */
-		
+
 		ImageIcon water_image = new ImageIcon("\\src\\java_term_project\\image\\water.png");
-		ImageIcon coffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\coffee.jpg");
-		ImageIcon sport_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\sportdrink.png");
-		ImageIcon highcoffee_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\highcoffee.png");
-		ImageIcon soda_image = new ImageIcon("C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\soda.jpg");
-		
+		ImageIcon coffee_image = new ImageIcon(
+				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\coffee.jpg");
+		ImageIcon sport_image = new ImageIcon(
+				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\sportdrink.png");
+		ImageIcon highcoffee_image = new ImageIcon(
+				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\highcoffee.png");
+		ImageIcon soda_image = new ImageIcon(
+				"C:\\Users\\SongYunMin\\source\\repos\\Hedgehog_Java_Project\\src\\java_term_project\\image\\soda.jpg");
+
 		JLabel Water_Label = new JLabel(water_image);
 		Water_Label.setForeground(Color.BLACK);
 		Water_Label.setFont(new Font("순천향체", Font.PLAIN, 60));
 		Water_Label.setBackground(Color.BLACK);
 		Water_Label.setBounds(94, 93, 97, 187);
 		Money_text.add(Water_Label);
-		
+
 		JLabel Coffee_Label = new JLabel(coffee_image);
 		Coffee_Label.setForeground(Color.BLACK);
 		Coffee_Label.setFont(new Font("순천향체", Font.PLAIN, 60));
 		Coffee_Label.setBackground(Color.BLACK);
 		Coffee_Label.setBounds(236, 104, 108, 176);
 		Money_text.add(Coffee_Label);
-		
+
 		JLabel Sport_Label = new JLabel(sport_image);
 		Sport_Label.setForeground(Color.BLACK);
 		Sport_Label.setFont(new Font("순천향체", Font.PLAIN, 60));
 		Sport_Label.setBackground(Color.BLACK);
 		Sport_Label.setBounds(390, 104, 97, 176);
 		Money_text.add(Sport_Label);
-		
+
 		JLabel HighCoffee_Label = new JLabel(highcoffee_image);
 		HighCoffee_Label.setForeground(Color.BLACK);
 		HighCoffee_Label.setFont(new Font("순천향체", Font.PLAIN, 60));
@@ -118,8 +135,6 @@ public class UI extends JFrame {
 		Soda_Label.setBackground(Color.BLACK);
 		Soda_Label.setBounds(706, 116, 97, 164);
 		Money_text.add(Soda_Label);
-		
-		
 
 		// 관리자 메뉴 버튼
 		JButton Admin_Menu = new JButton("\uAD00\uB9AC\uC790 \uBA54\uB274");
@@ -147,33 +162,29 @@ public class UI extends JFrame {
 		Water.addActionListener(new ActionListener() {
 			// 클릭 이벤트
 			public void actionPerformed(ActionEvent e) {
-				// 재고 Check
-				if (water.getNumber() == 0) {
-					WaterNum.setText("품절");
-					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
-					return;
-				}
-				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
-				if (money.getMoney() >= 450) {
-					// 재고 한개 Down
-					water.MinusNumber(water.getNumber(), 1);
-					WaterNum.setText("수량 : " + water.getNumber());
-					InputMoney.setText(String.valueOf(money.getMoney() - 450));
-					money.MinusMoney(money.getMoney(), 450);
-					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
-					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
-					// 데아터에 연결하기 위해선 IO예외처리 필수인듯
-					try {
-						a.Transfer(String.valueOf(water.getWaterPrice()));
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-				// 잔액 부족
-				else {
-					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
-				}
+//				// 재고 Check
+//				if (water.getNumber() == 0) {
+//					WaterNum.setText("품절");
+//					JOptionPane.showMessageDialog(Money_text, "재고가 부족합니다");
+//					return;
+//				}
+//				// 잔액이 물의 금액보다 같거나 많다면 분기 실행
+//				if (money.getMoney() >= 450) {
+//					// 재고 한개 Down
+//					water.MinusNumber(water.getNumber(), 1);
+//					WaterNum.setText("수량 : " + water.getNumber());
+//					InputMoney.setText(String.valueOf(money.getMoney() - 450));
+//					money.MinusMoney(money.getMoney(), 450);
+//					JOptionPane.showMessageDialog(Money_text, "물 을 구입하였습니다.");
+//					GS.Plus_Day_Sales(GS.getDay_Sales(), water.getWater());
+//				}
+//				// 잔액 부족
+//				else {
+//					JOptionPane.showMessageDialog(Money_text, "잔액이 부족합니다.");
+//				}
+				
+				Socket socket = null;
+				
 			}
 		});
 
@@ -400,9 +411,9 @@ public class UI extends JFrame {
 				if (money10.getCount() != 0) {
 					if (money.getMoney() <= 4990) {
 						money.setMoney(money.getMoney(), money10.getMoney_10());
-					//	money10.delete();
+						// money10.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
-						//Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
+						// Money10_Num.setText(String.valueOf(money10.getCount()) + " 개");
 					} else {
 
 					}
@@ -424,9 +435,9 @@ public class UI extends JFrame {
 				if (money50.getCount() != 0) {
 					if (money.getMoney() <= 4950) {
 						money.setMoney(money.getMoney(), money50.getMoney_50());
-				//		money50.delete();
+						// money50.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
-						//Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
+						// Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
 					} else {
 						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
 					}
@@ -447,9 +458,9 @@ public class UI extends JFrame {
 				if (money100.getCount() != 0) {
 					if (money.getMoney() <= 4900) {
 						money.setMoney(money.getMoney(), money100.getMoney_100());
-				//		money100.delete();
+						// money100.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-						//Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
+						// Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
 					} else {
 						JOptionPane.showMessageDialog(Money_text, "5000 원 이상 입력 받을 수 없습니다.");
 					}
@@ -471,9 +482,9 @@ public class UI extends JFrame {
 					if (money.getMoney() <= 4500) {
 						money.setMoney(money.getMoney(), money500.getMoney_500());
 
-				//		money500.delete();
+						// money500.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-						//Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
+						// Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
 					} else {
 						JOptionPane.showMessageDialog(Money_text, "5000원 이상 입력 받을 수 없습니다.");
 					}
@@ -495,9 +506,9 @@ public class UI extends JFrame {
 
 					if (money.getMoney() <= 2000) {
 						money.setMoney(money.getMoney(), money1000.getMoney_1000());
-				//		money1000.delete();
+						// money1000.delete();
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
-						//Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
+						// Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
 					} else {
 						JOptionPane.showMessageDialog(Money_text, "화폐 입력 최대단위는 3000원 입니다.");
 					}
@@ -564,34 +575,34 @@ public class UI extends JFrame {
 		ReturnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				while (money.getMoney() != 0) {
-					//1000원 갯수
+					// 1000원 갯수
 					if (money.getMoney() >= 1000) {
 						money.MinusMoney(money.getMoney(), 1000);
 						InputMoney.setText(String.valueOf(money.getMoney()) + " 원");
 						money1000.PlusCount(money1000.getCount(), 1);
 						Money1000_Num.setText(String.valueOf(money1000.getCount()) + " 개");
-					} 
+					}
 					// 500원 갯수
 					else if (money.getMoney() >= 500) {
 						money.MinusMoney(money.getMoney(), 500);
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
 						money500.PlusCount(money500.getCount(), 1);
 						Money500_Num.setText(String.valueOf(money500.getCount()) + " 개");
-					} 
+					}
 					// 100원 갯수
 					else if (money.getMoney() >= 100) {
 						money.MinusMoney(money.getMoney(), 100);
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
 						money100.PlusCount(money100.getCount(), 1);
 						Money100_Num.setText(String.valueOf(money100.getCount()) + " 개");
-					} 
+					}
 					// 50원 갯수
 					else if (money.getMoney() >= 50) {
 						money.MinusMoney(money.getMoney(), 50);
 						InputMoney.setText(String.valueOf(money.getMoney()) + "원");
 						money50.PlusCount(money50.getCount(), 1);
 						Money50_Num.setText(String.valueOf(money50.getCount()) + " 개");
-					} 
+					}
 					// 10원 갯수
 					else if (money.getMoney() >= 10) {
 						money.MinusMoney(money.getMoney(), 10);
@@ -606,7 +617,6 @@ public class UI extends JFrame {
 		ReturnButton.setBackground(new Color(250, 235, 215));
 		ReturnButton.setBounds(196, 512, 97, 48);
 		Money_text.add(ReturnButton);
-		
 
 		JLabel label = new JLabel("10\uC6D0");
 		label.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
@@ -632,14 +642,12 @@ public class UI extends JFrame {
 		label_4.setFont(new Font("배달의민족 주아", Font.PLAIN, 23));
 		label_4.setBounds(801, 538, 84, 40);
 		Money_text.add(label_4);
-		
+
 		JLabel label_5 = new JLabel("\uAE08\uC561 \uC785\uB825");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("배달의민족 주아", Font.PLAIN, 32));
 		label_5.setBounds(699, 386, 132, 48);
 		Money_text.add(label_5);
-		
-
 
 		SportDrink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

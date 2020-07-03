@@ -28,6 +28,6 @@ public class Main {
 				}
 			}
 		});
-		a.Transfer("data");
+		//a.Transfer("data");
 	}
 }
